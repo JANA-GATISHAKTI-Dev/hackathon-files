@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  jana-gatishakti:
+    build: .
+    container_name: jana_gatishakti_dpi
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - PYTHONIOENCODING=utf-8
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
