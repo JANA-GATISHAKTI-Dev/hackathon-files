@@ -143,3 +143,11 @@ async def serve_index():
     if os.path.exists(index_file):
         return FileResponse(index_file)
     return {"message": "Jana-GatiShakti API is running. Frontend index.html not yet initialized."}
+
+@app.get("/presentation")
+async def serve_presentation():
+    pres_file = os.path.join(frontend_path, "presentation.html")
+    if os.path.exists(pres_file):
+        return FileResponse(pres_file)
+    return {"message": "presentation.html not found"}
+

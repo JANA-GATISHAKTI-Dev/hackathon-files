@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JANA-GATISHAKTI | Architecture & Innovation Pitch Deck</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 10% 20%, #0B132B 0%, #050811 100%);
+      color: #F1F5F9;
+    }
+    code, .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    }
+    .glass-card-glow {
+      background: rgba(22, 33, 62, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.12);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-accent {
+      background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-slate-900 min-h-screen flex flex-col antialiased">
+
+  <!-- TOP SOVEREIGN BANNER -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-bold text-lg shadow-lg shadow-cyan-500/20">
+          ⚡
+        </div>
+        <div>
+          <span class="font-extrabold text-base tracking-tight text-slate-100 flex items-center gap-2">
+            JANA-GATISHAKTI <span class="text-xs font-normal text-slate-400">| जन-गतिशक्ति</span>
+          </span>
+          <span class="text-[10px] text-cyan-400 block font-mono">BRICS Track 1: Innovation • Digital Public Good</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-300">
+        <a href="#problem" class="hover:text-cyan-400 transition">The Problem</a>
+        <a href="#innovation" class="hover:text-cyan-400 transition">The Breakthrough</a>
+        <a href="#architecture" class="hover:text-cyan-400 transition">Architecture (6 Layers)</a>
+        <a href="#google-synergy" class="hover:text-cyan-400 transition">Google Synergy</a>
+        <a href="#dpga" class="hover:text-cyan-400 transition">DPGA Compliance</a>
+        <a href="#implementation" class="hover:text-cyan-400 transition">Implementation</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="/" class="px-3.5 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg text-xs font-bold transition shadow-lg shadow-cyan-600/30 flex items-center gap-1.5">
+          <span>🖥️ Live Dashboard</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="max-w-7xl mx-auto px-4 pt-16 pb-12 text-center space-y-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/80 text-xs font-semibold text-cyan-300">
+      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+      Track 1 — AI for Digital Public Infrastructure & Governance | BRICS Theme: Innovation
+    </div>
+
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight max-w-4xl mx-auto leading-tight">
+      From <span class="gradient-accent">Citizen Vernacular Voice</span> to <span class="gradient-text">Bankable Capital Infrastructure</span>
+    </h1>
+
+    <p class="text-slate-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+      A sovereign <strong>Digital Public Good (DPG)</strong> that bridges the fatal gap between isolated grievance redressal (CPGRAMS) and national top-down capital infrastructure planning (PM GatiShakti) across India and BRICS nations.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs">
+        <span class="text-emerald-400 font-bold">✔ DPGA Standard:</span> 9/9 Indicators Met
+      </div>
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs">
+        <span class="text-cyan-400 font-bold">✔ Project Vaani:</span> 773 Indian Districts Vernacular Speech
+      </div>
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs">
+        <span class="text-amber-400 font-bold">✔ Open Standards:</span> OGC GeoJSON + OCDS Budget Schema
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: THE CORE PROBLEM -->
+  <section id="problem" class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+    <div class="border-b border-slate-800 pb-4">
+      <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest">01. The Ground Reality</span>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-100 mt-1">Why Current Infrastructure Planning Fails Ordinary Citizens</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="glass-card p-6 rounded-2xl border border-red-500/20 space-y-3">
+        <div class="text-3xl">🎫</div>
+        <h3 class="text-lg font-bold text-red-300">The "Ticketing" Illusion (CPGRAMS)</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          When an illiterate farmer or rural mother calls about a broken water pipeline, toxic fluoride water, or washed-out road, the grievance portal treats it as a single ticket. Officials mark it <em>"Resolved: Forwarded to PWD"</em>. <strong>No capital budget is ever allocated, and nothing is built.</strong>
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl border border-amber-500/20 space-y-3">
+        <div class="text-3xl">🛰️</div>
+        <h3 class="text-lg font-bold text-amber-300">Top-Down GIS Blind Spots (PM GatiShakti)</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          PM GatiShakti successfully aggregates 58+ ministry GIS layers (highways, rail corridors, gas pipelines) from orbit. However, it has <strong>zero bottom-up human demand verification</strong>. It cannot detect that a tribal primary health center has no electricity, or that children cannot cross a flooded river.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl border border-purple-500/20 space-y-3">
+        <div class="text-3xl">👻</div>
+        <h3 class="text-lg font-bold text-purple-300">"Ghost Infrastructure" & Contractor Fraud</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Upwards of 35% of public capital spending suffers leakage. Contractors bill governments for "100% completed" rural piped water or roads, while ground realities reveal dry taps and paper roads. <strong>There is no closed-loop citizen verification after project handover.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: THE OUT-OF-THE-BOX INNOVATION -->
+  <section id="innovation" class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+    <div class="border-b border-slate-800 pb-4">
+      <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest">02. The Unique Breakthrough</span>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-100 mt-1">Jana-GatiShakti: The Citizen-Up Infrastructure Bridge</h2>
+    </div>
+
+    <div class="glass-card-glow p-8 rounded-2xl space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="space-y-4">
+          <h3 class="text-xl font-bold text-slate-100">
+            Flipping Infrastructure Planning from <span class="text-red-400">Top-Down Speculation</span> to <span class="text-emerald-400">Citizen-Verified Demand</span>
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Instead of treating citizen voices as isolated grievances to dismiss, <strong>Jana-GatiShakti</strong> treats them as high-value telemetry signals. It aggregates vernacular speech (Hindi, Marathi, Tamil, Kannada, Telugu, Bengali), strips sensitive personal data under zero-knowledge privacy, and fuses them with <strong>District Demographics, National Deficit Indices, and Capex Pipelines</strong>.
+          </p>
+          <div class="space-y-2 pt-2 text-xs">
+            <div class="flex items-start gap-2.5">
+              <span class="text-cyan-400 font-bold">1.</span>
+              <span><strong>Ground-Truth Corroboration:</strong> Identifies where 30, 50, or 100 citizens within a 10 km radius are screaming for the same critical lifeline.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="text-cyan-400 font-bold">2.</span>
+              <span><strong>Automated Capital Project Dossiers (Nivesh-Drishti):</strong> Generates ready-to-table Detailed Project Reports (DPRs) with ₹ Crores budget, beneficiary count, and SDG alignment.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="text-cyan-400 font-bold">3.</span>
+              <span><strong>Jan-Praman Ghost Asset Sentinel:</strong> Automated follow-up phone calls to citizens to verify if contractor claims are genuine or fraudulent.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Before vs After Box -->
+        <div class="space-y-4 text-xs">
+          <div class="p-4 rounded-xl bg-red-950/40 border border-red-500/30 space-y-1.5">
+            <span class="font-bold text-red-300 uppercase tracking-wider block">❌ The Old Way (Fragmented & Reactive)</span>
+            <div class="text-slate-300">Citizen complains on CM Helpline ➔ Ticket created ➔ Junior Engineer forwards ➔ Ticket closed ➔ Zero capex allocated ➔ Citizen stays without water.</div>
+          </div>
+          <div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/30 space-y-1.5">
+            <span class="font-bold text-emerald-300 uppercase tracking-wider block">✅ The Jana-GatiShakti Way (Predictive & Capital-Linked)</span>
+            <div class="text-slate-300">Citizen speaks in Marathi/Hindi on WhatsApp ➔ AI scrubs PII ➔ Disparity Engine clusters 45 voices ➔ Matches NITI Aayog deficit ➔ Synthesizes <strong>₹ 14.5 Cr Jal Jeevan Mission Project DPR</strong> ➔ Table on District Collector's desk ➔ Follow-up IVR verifies completion.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: SYSTEM ARCHITECTURE (6 LAYERS) -->
+  <section id="architecture" class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+    <div class="border-b border-slate-800 pb-4">
+      <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">03. Technical Architecture</span>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-100 mt-1">The 6-Layer Sovereign DPI Pipeline</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Layer 1 -->
+      <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="w-7 h-7 rounded-lg bg-cyan-600/30 text-cyan-400 font-bold flex items-center justify-center text-xs font-mono">L1</span>
+          <span class="text-[11px] text-slate-400 font-mono">Bhasha-Setu</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-sm">Multilingual Ingestion Rail</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Aggregates citizen requests across Voice IVR, WhatsApp audio notes, SMS, and Gram Panchayat kiosks in Hindi, Marathi, Tamil, Telugu, Kannada, English, and BRICS partner tongues.
+        </p>
+      </div>
+
+      <!-- Layer 2 -->
+      <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="w-7 h-7 rounded-lg bg-emerald-600/30 text-emerald-400 font-bold flex items-center justify-center text-xs font-mono">L2</span>
+          <span class="text-[11px] text-emerald-400 font-mono">DPGA Indicator 6 & 7</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-sm">Zero-Knowledge PII Scrubber</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Automatically redacts Aadhaar numbers, CPF numbers, mobile numbers, and personal names before storage, adhering to India's DPDP Act 2023 and global privacy frameworks.
+        </p>
+      </div>
+
+      <!-- Layer 3 -->
+      <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="w-7 h-7 rounded-lg bg-indigo-600/30 text-indigo-400 font-bold flex items-center justify-center text-xs font-mono">L3</span>
+          <span class="text-[11px] text-indigo-400 font-mono">Data Fusion</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-sm">4-Layer Geospatial Grid</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Fuses clean citizen voice signals with Census Demographics (poverty rate, tribal %), Infrastructure Deficit Indices (Water, Power, Roads, Health), and Capex Budgets.
+        </p>
+      </div>
+
+      <!-- Layer 4 -->
+      <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="w-7 h-7 rounded-lg bg-amber-600/30 text-amber-400 font-bold flex items-center justify-center text-xs font-mono">L4</span>
+          <span class="text-[11px] text-amber-400 font-mono">DDDI Algorithm</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-sm">Spatial Hotspot Engine</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Computes the Demand-Deficit Disparity Index: <code>DDDI = 0.40(Demand) + 0.35(Deficit) + 0.25(Vulnerability)</code>. Surfaces acute hotspots and government blind spots.
+        </p>
+      </div>
+
+      <!-- Layer 5 -->
+      <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="w-7 h-7 rounded-lg bg-pink-600/30 text-pink-400 font-bold flex items-center justify-center text-xs font-mono">L5</span>
+          <span class="text-[11px] text-pink-400 font-mono">Nivesh-Drishti</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-sm">MCDA Capital Project Formulator</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Multi-Criteria Decision Analysis generates discrete bankable project briefs with ₹ Crores Capex, target beneficiaries, timeline, and mapping to JJM, PMGSY, or PM-KUSUM.
+        </p>
+      </div>
+
+      <!-- Layer 6 -->
+      <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="w-7 h-7 rounded-lg bg-red-600/30 text-red-400 font-bold flex items-center justify-center text-xs font-mono">L6</span>
+          <span class="text-[11px] text-red-400 font-mono">Jan-Praman</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-sm">Closed-Loop Ghost Asset Sentinel</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Conducts automated post-completion phone calls to original complainants, verifying if infrastructure actually functions. Flags fraudulent contractor billing claims.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: GOOGLE AI SYNERGY -->
+  <section id="google-synergy" class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+    <div class="border-b border-slate-800 pb-4">
+      <span class="text-xs font-mono font-bold text-sky-400 uppercase tracking-widest">04. Google AI Synergy</span>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-100 mt-1">Why This is a Google-Caliber Innovation</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center gap-3">
+          <div class="text-2xl">🎙️</div>
+          <h3 class="text-base font-bold text-slate-100">Project Vaani (Google India + IISc)</h3>
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Jana-GatiShakti leverages Google’s groundbreaking 14,000+ hour vernacular speech dataset spanning 773 Indian districts and 80+ spoken dialects. It allows an illiterate tribal citizen in Bastar or a farmer in Vidarbha to express urgent needs in their mother tongue without having to navigate bureaucratic forms.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center gap-3">
+          <div class="text-2xl">🛰️</div>
+          <h3 class="text-base font-bold text-slate-100">Google Earth Engine (GEE) & Geospatial AI</h3>
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          The platform introduces <strong>Dual-Lens Ground-to-Orbit Verification</strong>: citizen reports on ground-water depletion or dry canals are cross-verified with satellite Normalized Difference Water Index (NDWI), and power blackouts are confirmed via VIIRS Nighttime Lights.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: DPGA COMPLIANCE MATRIX -->
+  <section id="dpga" class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+    <div class="border-b border-slate-800 pb-4">
+      <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">05. Digital Public Good Standard</span>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-100 mt-1">Verified Against All 9 DPGA Indicators</h2>
+    </div>
+
+    <div class="glass-card p-6 rounded-2xl overflow-x-auto text-xs">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b border-slate-800 text-slate-400 uppercase tracking-wider text-[11px]">
+            <th class="py-2.5 px-3">Indicator</th>
+            <th class="py-2.5 px-3">Requirement</th>
+            <th class="py-2.5 px-3">Implementation in Jana-GatiShakti</th>
+            <th class="py-2.5 px-3">Audit Status</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-800/60 text-slate-300">
+          <tr>
+            <td class="py-2.5 px-3 font-bold text-slate-200">1. SDG Relevance</td>
+            <td class="py-2.5 px-3">Direct contribution to UN SDGs</td>
+            <td class="py-2.5 px-3">Quantifiable linkage to SDGs 3, 6, 7, 9, 10, 11, 16.</td>
+            <td class="py-2.5 px-3 text-emerald-400 font-bold font-mono">VERIFIED</td>
+          </tr>
+          <tr>
+            <td class="py-2.5 px-3 font-bold text-slate-200">2. Open Licencing</td>
+            <td class="py-2.5 px-3">Approved open source license</td>
+            <td class="py-2.5 px-3">Apache-2.0 License in root repository.</td>
+            <td class="py-2.5 px-3 text-emerald-400 font-bold font-mono">VERIFIED</td>
+          </tr>
+          <tr>
+            <td class="py-2.5 px-3 font-bold text-slate-200">3. Clear Ownership</td>
+            <td class="py-2.5 px-3">Transparent governance & authors</td>
+            <td class="py-2.5 px-3">Citizen-DPI / BRICS Consortium Open Source.</td>
+            <td class="py-2.5 px-3 text-emerald-400 font-bold font-mono">VERIFIED</td>
+          </tr>
+          <tr>
+            <td class="py-2.5 px-3 font-bold text-slate-200">4. Platform Independence</td>
+            <td class="py-2.5 px-3">No proprietary vendor lock-in</td>
+            <td class="py-2.5 px-3">Containerized (Docker); runs on Linux, bare-metal, or PC.</td>
+            <td class="py-2.5 px-3 text-emerald-400 font-bold font-mono">VERIFIED</td>
+          </tr>
+          <tr>
+            <td class="py-2.5 px-3 font-bold text-slate-200">5. Documentation</td>
+            <td class="py-2.5 px-3">Adequate code & architectural specs</td>
+            <td class="py-2.5 px-3">OpenAPI 3.0 (Swagger), ARCHITECTURE.md, README.md.</td>
+            <td class="py-2.5 px-3 text-emerald-400 font-bold font-mono">VERIFIED</td>
+          </tr>
+          <tr>
+            <td class="py-2.5 px-3 font-bold text-slate-200">6. Non-PII Extraction</td>
+            <td class="py-2.5 px-3">Zero personal data leakage</td>
+            <td class="py-2.5 px-3">Automated regex & NER scrubber for Aadhaar, CPF, phones.</td>
+            <td class="py-2.5 px-3 text-emerald-400 font-bold font-mono">VERIFIED</td>
+          </tr>
+          <tr>
+            <td class="py-2.5 px-3 font-bold text-slate-200">7. Privacy & Laws</td>
+            <td class="py-2.5 px-3">Sovereign privacy compliance</td>
+            <td class="py-2.5 px-3">Aligned with India DPDP Act 2023, Brazil LGPD, SA POPIA.</td>
+            <td class="py-2.5 px-3 text-emerald-400 font-bold font-mono">VERIFIED</td>
+          </tr>
+          <tr>
+            <td class="py-2.5 px-3 font-bold text-slate-200">8. Open Standards</td>
+            <td class="py-2.5 px-3">Adherence to open formats</td>
+            <td class="py-2.5 px-3">OGC GeoJSON format + Open Contracting (OCDS 1.1).</td>
+            <td class="py-2.5 px-3 text-emerald-400 font-bold font-mono">VERIFIED</td>
+          </tr>
+          <tr>
+            <td class="py-2.5 px-3 font-bold text-slate-200">9. Do No Harm</td>
+            <td class="py-2.5 px-3">Fairness & anti-harassment guards</td>
+            <td class="py-2.5 px-3">Community consensus weighting prevents malicious reports.</td>
+            <td class="py-2.5 px-3 text-emerald-400 font-bold font-mono">VERIFIED</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 6: IMPLEMENTATION & QUICK ACCESS -->
+  <section id="implementation" class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+    <div class="border-b border-slate-800 pb-4">
+      <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest">06. Ready to Demo</span>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-100 mt-1">Live Implementation Tour</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+        <h4 class="font-bold text-slate-100 text-sm">🖥️ Interactive GIS Cockpit</h4>
+        <p class="text-xs text-slate-400">
+          Explore the live Leaflet map with multi-layer overlays for Aspirational Districts (Vidarbha, Bastar, Bundelkhand, Raichur, Nuh) and BRICS partner regions.
+        </p>
+        <a href="/" class="text-cyan-400 font-semibold text-xs inline-flex items-center gap-1 hover:underline">
+          Open Live Map →
+        </a>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+        <h4 class="font-bold text-slate-100 text-sm">🎙️ Bhasha-Setu Voice Kiosk</h4>
+        <p class="text-xs text-slate-400">
+          Try the 1-click preset citizen scenarios or click the microphone to speak in native vernacular. Watch live PII scrubbing and instant hotspot creation.
+        </p>
+        <a href="/" class="text-cyan-400 font-semibold text-xs inline-flex items-center gap-1 hover:underline">
+          Test Voice Ingestion →
+        </a>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+        <h4 class="font-bold text-slate-100 text-sm">📑 OCDS Open Contracting</h4>
+        <p class="text-xs text-slate-400">
+          Download or inspect the official machine-readable Open Contracting Data Standard (OCDS) releases generated for all recommended capital projects.
+        </p>
+        <a href="/api/dpg/ocds" target="_blank" class="text-cyan-400 font-semibold text-xs inline-flex items-center gap-1 hover:underline">
+          View OCDS JSON →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-900/90 py-6 text-xs text-slate-400 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-200">JANA-GATISHAKTI DPI</span>
+        <span>•</span>
+        <span>Track 1: AI for Digital Public Infrastructure & Governance</span>
+        <span>•</span>
+        <span>BRICS Theme: Innovation</span>
+      </div>
+      <div>
+        <span>Built with Google AI & Open Source Technologies</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
