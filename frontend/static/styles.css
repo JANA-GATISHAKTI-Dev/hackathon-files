@@ -1,21 +1,26 @@
-/* Custom Glassmorphism and Executive Dashboard Styles for Jana-GatiShakti */
+/* ==========================================================================
+   JANA-GATISHAKTI / PUBLIC INFRASTRUCTURE COMMAND CENTER
+   Cyber-Glassmorphism, High-Tech HUD Telemetry & Executive Presentation Styling
+   ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-navy: #0B132B;
-  --secondary-navy: #1C2541;
+  --primary-navy: #070D1E;
+  --secondary-navy: #0F172A;
+  --card-navy: #0C1328;
   --accent-cyan: #38BDF8;
   --accent-blue: #0284C7;
   --accent-orange: #F97316;
   --accent-emerald: #10B981;
   --accent-rose: #EF4444;
   --accent-purple: #A855F7;
+  --accent-amber: #F59E0B;
 }
 
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(circle at 10% 15%, #0B132B 0%, #050811 100%);
+  background: radial-gradient(circle at 10% 15%, #080E24 0%, #03060E 100%);
   color: #F1F5F9;
   min-height: 100vh;
 }
@@ -24,33 +29,50 @@ code, .font-mono {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Glassmorphism panels */
+/* Glassmorphism Panels */
 .glass-panel {
-  background: rgba(17, 24, 39, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(12, 19, 40, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
 }
 
 .glass-panel-glow {
-  background: rgba(22, 33, 62, 0.85);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  box-shadow: 0 0 35px rgba(56, 189, 248, 0.12);
+  background: rgba(15, 23, 48, 0.88);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.15);
 }
 
 .glass-panel-active {
-  background: rgba(30, 41, 59, 0.9);
+  background: rgba(18, 28, 58, 0.95);
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+/* Cyber Command Center Border Accents */
+.border-glow-cyan {
   border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+.border-glow-red {
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.2);
+}
+
+.border-glow-emerald {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
 }
 
 /* Tab active state */
 .tab-btn.active {
-  background: rgba(56, 189, 248, 0.15);
+  background: rgba(56, 189, 248, 0.18);
   color: #38BDF8;
-  border-color: rgba(56, 189, 248, 0.5);
+  border-color: rgba(56, 189, 248, 0.6);
   font-weight: 700;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
 /* Audio Waveform Animation */
@@ -85,21 +107,21 @@ code, .font-mono {
 
 /* Leaflet Map Styling */
 .leaflet-container {
-  background: #0f172a !important;
+  background: #070d1e !important;
   font-family: inherit !important;
   border-radius: 1rem;
 }
 
 .leaflet-popup-content-wrapper {
-  background: #1e293b !important;
+  background: #0f172a !important;
   color: #f8fafc !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
   border-radius: 12px !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7) !important;
 }
 
 .leaflet-popup-tip {
-  background: #1e293b !important;
+  background: #0f172a !important;
 }
 
 /* WhatsApp Chat Bubbles */
@@ -115,18 +137,35 @@ code, .font-mono {
   border-radius: 12px 0 12px 12px;
 }
 
+/* HUD Live Status Dot */
+.hud-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 10px #10B981;
+  display: inline-block;
+  animation: pulse-hud 2s infinite;
+}
+
+@keyframes pulse-hud {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
 /* Scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(7, 13, 30, 0.6);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.5);
+  background: rgba(71, 85, 105, 0.6);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.8);
+  background: rgba(100, 116, 139, 0.9);
 }

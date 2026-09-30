@@ -354,3 +354,15 @@ async def serve_submission():
         return FileResponse(sub_file)
     return {"message": "submission.html not found"}
 
+@app.get("/download/deck")
+async def download_deck():
+    deck_path = os.path.join(frontend_path, "static", "JANA_GATISHAKTI_Executive_Presentation_Deck.pptx")
+    if os.path.exists(deck_path):
+        return FileResponse(
+            deck_path,
+            filename="JANA_GATISHAKTI_Executive_Presentation_Deck.pptx",
+            media_type="application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        )
+    return {"message": "PowerPoint deck not found"}
+
+

@@ -388,7 +388,7 @@ async function simulateWhatsAppSend() {
   const chatBody = document.getElementById("whatsapp-chat-body");
   if (!input || !chatBody) return;
 
-  const text = input.value.trim() || "कासनसूर गावात नळाचे पाणी ४ महिन्यांपासून बंद आहे. फोन 9822145678, आधार 4521 8901 2345.";
+  const text = input.value.trim() || "In Kasansur village, tap water has been completely shut off for 4 months. Phone 9822145678, Aadhaar 4521 8901 2345.";
   input.value = "";
 
   const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -441,9 +441,9 @@ async function simulateWhatsAppSend() {
     botBubble.className = "flex items-start";
     botBubble.innerHTML = `
       <div class="chat-bubble-in p-3 max-w-[85%] text-xs space-y-1.5 shadow">
-        <p class="text-cyan-300 font-bold">✓ तक्रार नोंदवली (तिकीट: ${ticketId})</p>
-        <p class="text-[11px] text-slate-300">क्षेत्र: <strong>${sectorName}</strong> • तीव्रता: <strong>${severity}/5</strong>. आधार व मोबाइल क्रमांक आपोआप हटवले आहेत.</p>
-        <p class="text-[10px] text-emerald-400">आपल्या समस्येचा जन-गतिशक्ती जिओ-हॉटस्पॉट ग्रिडमध्ये समावेश झाला आहे.</p>
+        <p class="text-cyan-300 font-bold">✓ Grievance Registered (Ticket: #${ticketId})</p>
+        <p class="text-[11px] text-slate-300">Sector: <strong>${sectorName}</strong> • Urgency: <strong>${severity}/5 Critical</strong>. Aadhaar &amp; mobile scrubbed via Verhoeff algorithm under DPDP Act 2023.</p>
+        <p class="text-[10px] text-emerald-400">Aggregated into Sovereign Geo-Hotspot Grid for Capital Project Formulation.</p>
         <span class="text-[9px] text-slate-400 block text-right">${timeStr}</span>
       </div>
     `;
@@ -478,22 +478,22 @@ const PRESET_SCENARIOS = {
   vidarbha: {
     districtId: "990001",
     corrob: 52,
-    text: "माझं नाव आनंदराव कोवासे आहे, मोबाइल 9822145678. कासनसूर गावात नळाचे पाणी ४ महिन्यांपासून पूर्ण बंद आहे. विहिरीचे पाणी पिऊन १० मुले आजारी पडली आहेत. प्राथमिक आरोग्य केंद्रात वीज नाही आणि अँटीव्हेनम उपलब्ध नाही."
+    text: "In Kasansur village, tap water has been completely shut off for 4 months. Phone 9822145678, Aadhaar 4521 8901 2345. Ten children fell ill from well water. Primary health center has no electricity feeder and no antivenom available."
   },
   nandurbar: {
     districtId: "990002",
     corrob: 76,
-    text: "धडगाव तालुक्यातील मोलगी पाड्यात पिण्याच्या पाण्याची गंभीर टंचाई आहे. सोलर पंप बंद पडल्यामुळे महिलांना खोल दरीतून पाणी आणावे लागते."
+    text: "In Molgi tribal hamlet, Dhadgaon taluka, severe drinking water crisis. Solar water pump broke down 3 months ago; women must hike 4 km into deep valley to fetch muddy stream water."
   },
   washim: {
     districtId: "990003",
     corrob: 68,
-    text: "मानोरा तालुक्यातील शेती फीडरवर वीज दिवसातून फक्त २ तास मिळते, व्होल्टेज कमी असल्यामुळे शेतकर्‍यांचे १५ पंप जळाले आहेत."
+    text: "In Manora taluka, agricultural feeder power is available only 2 hours at night with severe low voltage. Electric motors of 15 farmers burnt. Kharif crop drying without irrigation."
   },
   bastar: {
     districtId: "374",
     corrob: 114,
-    text: "हमारे बडेकिलेपाल गांव से मुख्य सड़क तक 7 किलोमीटर कोई पक्की सड़क नहीं है। नाले पर पुलिया नहीं है। प्रसव पीड़ा के दौरान गर्भवती महिला को खाट पर ले जाते समय रास्ते में दम तोड़ दिया।"
+    text: "From Bade Kilepal village to main road, 7 km unpaved dirt track. No bridge over river stream. During labor pains, pregnant woman died on cot while being carried across flooded stream to hospital."
   }
 };
 

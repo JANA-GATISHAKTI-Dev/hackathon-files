@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JANA-GATISHAKTI | Sovereign Citizen-Driven DPI Platform</title>
+  <title>JANA-GATISHAKTI | Public Infrastructure Command Center</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,38 +15,39 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-slate-900">
 
-  <!-- TOP SOVEREIGN DPI NAVIGATION HEADER -->
-  <header class="border-b border-slate-800/80 bg-slate-900/95 backdrop-blur-md sticky top-0 z-50 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+  <!-- TOP COMMAND CENTER STATUS HEADER -->
+  <header class="border-b border-cyan-500/30 bg-slate-900/95 backdrop-blur-md sticky top-0 z-50 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-3">
       
       <!-- Brand & Badges -->
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 font-black text-xl">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 font-black text-xl border border-cyan-400/40">
           ⚡
         </div>
         <div>
           <div class="flex items-center gap-2">
-            <h1 class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">
-              JANA-GATISHAKTI <span class="text-xs font-normal text-slate-400">| जन-गतिशक्ति</span>
+            <h1 class="font-extrabold text-base sm:text-lg tracking-tight bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">
+              PUBLIC INFRASTRUCTURE COMMAND CENTER
             </h1>
             <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
               DPGA 9/9 DPG
             </span>
-            <span class="hidden sm:inline text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-              Maharashtra Pilot (LGD 27)
+          </div>
+          <div class="flex items-center gap-2 text-xs text-slate-400">
+            <span>MAHARASHTRA STATE PILOT (LGD 27)</span>
+            <span>•</span>
+            <span class="flex items-center gap-1.5 text-emerald-400 font-mono text-[11px]">
+              <span class="hud-dot"></span> LIVE NETWORK STATUS | 24/7 SOVEREIGN DPI
             </span>
           </div>
-          <p class="text-xs text-slate-400">
-            Citizen-Powered Digital Public Infrastructure for Vernacular Feedback &amp; Capital Project Formulation
-          </p>
         </div>
       </div>
 
-      <!-- Controls & Persona Switcher -->
-      <div class="flex items-center gap-2.5 flex-wrap">
-        <!-- RBAC / ABAC Role Switcher -->
+      <!-- Controls & Quick Action Badges -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <!-- RBAC / ABAC Persona -->
         <div class="flex items-center gap-1.5 bg-slate-800/90 p-1 rounded-lg border border-slate-700 text-xs">
-          <span class="text-slate-400 pl-1.5 font-medium">Persona:</span>
+          <span class="text-slate-400 pl-1 font-medium">Persona:</span>
           <select id="user-role-select" class="bg-slate-900 text-cyan-300 font-bold px-2 py-1 rounded border border-slate-700 focus:outline-none focus:border-cyan-500">
             <option value="citizen">👤 Citizen Edge</option>
             <option value="reporting_officer">👮 Reporting Officer (Gadchiroli Scope)</option>
@@ -54,9 +55,9 @@
           </select>
         </div>
 
-        <!-- Sovereign Focus Selector -->
+        <!-- Country Selector -->
         <div class="flex items-center gap-1.5 bg-slate-800/90 p-1 rounded-lg border border-slate-700 text-xs">
-          <span class="text-slate-400 pl-1.5 font-medium">Focus:</span>
+          <span class="text-slate-400 pl-1 font-medium">Focus:</span>
           <select id="country-filter" class="bg-slate-900 text-slate-200 font-semibold px-2 py-1 rounded border border-slate-700 focus:outline-none focus:border-cyan-500">
             <option value="IN">🇮🇳 Maharashtra Pilot (LGD)</option>
             <option value="BR">🇧🇷 Brazil (Sertão / Bahia)</option>
@@ -65,21 +66,26 @@
           </select>
         </div>
 
-        <a href="/submission" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-purple-600/30 to-pink-600/30 hover:from-purple-600/50 hover:to-pink-600/50 text-purple-200 border border-purple-500/40 rounded-lg text-xs font-bold transition">
-          <span>🏆 Submission Kit</span>
+        <!-- Download PowerPoint Deck -->
+        <a href="/download/deck" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-amber-600/40 to-orange-600/40 hover:from-amber-600/60 hover:to-orange-600/60 text-amber-200 border border-amber-500/40 rounded-lg text-xs font-bold transition shadow-md shadow-amber-500/20" title="Download Official 12-Slide PowerPoint Presentation (.pptx)">
+          <span>📥 Download PPTX</span>
         </a>
-        <a href="/presentation" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-cyan-600/30 to-indigo-600/30 hover:from-cyan-600/50 hover:to-indigo-600/50 text-cyan-200 border border-cyan-500/40 rounded-lg text-xs font-bold transition">
+
+        <!-- Presentation Deck -->
+        <a href="/presentation" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-cyan-600/40 to-indigo-600/40 hover:from-cyan-600/60 hover:to-indigo-600/60 text-cyan-200 border border-cyan-500/40 rounded-lg text-xs font-bold transition">
           <span>📖 Pitch Deck</span>
         </a>
-        <a href="/v1/opendata/ocds" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg text-xs font-medium transition">
-          <span>📑 OCDS 1.1</span>
+
+        <!-- Submission Kit -->
+        <a href="/submission" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-purple-600/40 to-pink-600/40 hover:from-purple-600/60 hover:to-pink-600/60 text-purple-200 border border-purple-500/40 rounded-lg text-xs font-bold transition">
+          <span>🏆 Submission Kit</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- NAVIGATION TABS BAR (Superior, User-Friendly Segmented Controller) -->
-  <nav class="border-b border-slate-800 bg-slate-900/60 sticky top-[65px] z-40 backdrop-blur-md">
+  <!-- NAVIGATION TABS BAR (5-Tab Segmented Command Center) -->
+  <nav class="border-b border-slate-800 bg-slate-900/80 sticky top-[60px] z-40 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-x-auto">
       <div class="flex items-center gap-2 py-2">
         <button onclick="switchTab('map-tab')" id="btn-map-tab" class="tab-btn active px-4 py-2 rounded-xl text-xs font-semibold border border-transparent transition flex items-center gap-2">
@@ -100,17 +106,17 @@
       </div>
 
       <!-- Live KPI Badges -->
-      <div class="hidden lg:flex items-center gap-3 text-xs pr-2">
-        <span class="text-slate-400">Hotspots: <strong id="kpi-hotspots" class="text-cyan-400 font-mono">12</strong></span>
+      <div class="hidden lg:flex items-center gap-3 text-xs pr-2 font-mono">
+        <span class="text-slate-400">Demand Hotspots: <strong id="kpi-hotspots" class="text-cyan-400 font-bold">12</strong></span>
         <span>•</span>
-        <span class="text-slate-400">Beneficiaries: <strong id="kpi-beneficiaries" class="text-emerald-400 font-mono">14.8L</strong></span>
+        <span class="text-slate-400">Beneficiaries: <strong id="kpi-beneficiaries" class="text-emerald-400 font-bold">14.8L</strong></span>
         <span>•</span>
-        <span class="text-slate-400">Capex: <strong id="kpi-capex" class="text-amber-400 font-mono">₹ 420 Cr</strong></span>
+        <span class="text-slate-400">Capex Optimised: <strong id="kpi-capex" class="text-amber-400 font-bold">₹ 420 Cr</strong></span>
       </div>
     </div>
   </nav>
 
-  <!-- REPORTING OFFICER (RO) JURISDICTION BANNER (Visible in RO Mode) -->
+  <!-- REPORTING OFFICER (RO) JURISDICTION BANNER -->
   <section id="ro-casework-section" class="bg-indigo-950/40 border-b border-indigo-500/40 py-2.5 hidden">
     <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-3 text-xs">
       <div class="flex items-center gap-2">
@@ -135,20 +141,20 @@
     </div>
   </section>
 
-  <!-- TAB CONTENT CONTAINERS -->
+  <!-- MAIN DASHBOARD CONTENT AREA -->
   <main class="max-w-7xl mx-auto px-4 py-5 flex-1 w-full">
 
-    <!-- ========================================== -->
-    <!-- TAB 1: GIS COMMAND COCKPIT                -->
-    <!-- ========================================== -->
+    <!-- ========================================================== -->
+    <!-- TAB 1: GIS COMMAND COCKPIT (Matching Presentation Deck)    -->
+    <!-- ========================================================== -->
     <div id="tab-map-content" class="space-y-4">
       
-      <!-- Map Controls & Layer Selector Header -->
-      <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-900/80 p-3 rounded-2xl border border-slate-800">
+      <!-- Top Sector Filter & Tile Engine Header -->
+      <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-900/90 p-3 rounded-2xl border border-slate-800 shadow-lg">
         <!-- Sector Filter Pills -->
         <div class="flex items-center gap-1.5 overflow-x-auto text-xs">
           <span class="text-slate-400 font-medium mr-1 hidden sm:inline">Sector:</span>
-          <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-cyan-600 text-white font-bold transition" data-sector="all">All Sectors</button>
+          <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-cyan-600 text-white font-bold transition shadow-sm" data-sector="all">All Sectors</button>
           <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition" data-sector="water">💧 Water</button>
           <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition" data-sector="roads">🛣️ Roads</button>
           <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition" data-sector="power">⚡ Power</button>
@@ -157,105 +163,192 @@
           <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition" data-sector="sanitation">🚽 Sanitation</button>
         </div>
 
-        <!-- Tile Provider Switcher (Guaranteed zero API key issues) -->
-        <div class="flex items-center gap-1 bg-slate-950 p-1 rounded-lg border border-slate-800 text-xs">
-          <button onclick="switchTileLayer('esriDark')" id="tile-btn-dark" class="px-2.5 py-1 rounded font-bold bg-cyan-600 text-white transition">🌌 Dark</button>
-          <button onclick="switchTileLayer('osmStreet')" id="tile-btn-osm" class="px-2.5 py-1 rounded font-medium text-slate-400 hover:text-white transition">🗺️ Street</button>
-          <button onclick="switchTileLayer('esriSatellite')" id="tile-btn-sat" class="px-2.5 py-1 rounded font-medium text-slate-400 hover:text-white transition">🛰️ Satellite</button>
+        <!-- Basemap Switcher (Zero API Key Esri / OSM Engine) -->
+        <div class="flex items-center gap-1 bg-slate-950 p-1 rounded-lg border border-slate-800 text-xs font-medium">
+          <button onclick="switchTileLayer('esriDark')" id="tile-btn-dark" class="px-2.5 py-1 rounded font-bold bg-cyan-600 text-white transition">🌌 Esri Dark</button>
+          <button onclick="switchTileLayer('osmStreet')" id="tile-btn-osm" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition">🗺️ Street</button>
+          <button onclick="switchTileLayer('esriSatellite')" id="tile-btn-sat" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition">🛰️ Satellite</button>
         </div>
       </div>
 
-      <!-- Map & Hotspot Inspector Dual Container -->
+      <!-- 3-Column Command Center Layout (Matching Cover & Slide 4 Visual) -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
-        <!-- Interactive Leaflet Canvas (8 Cols) -->
-        <div class="lg:col-span-8 glass-panel rounded-2xl border border-slate-800 overflow-hidden relative shadow-2xl">
+        
+        <!-- Left Telemetry Column (3 Cols) -->
+        <div class="lg:col-span-3 space-y-3">
+          
+          <!-- Power Grid Telemetry Card -->
+          <div class="glass-panel p-3.5 rounded-2xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-slate-400 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                <span>⚡</span> POWER GRID
+              </span>
+              <span class="text-emerald-400 font-mono font-bold text-xs">98.4% STABLE</span>
+            </div>
+            <!-- Mini Sparkline SVG -->
+            <div class="h-10 w-full flex items-end gap-1 pt-1">
+              <div class="flex-1 bg-cyan-500/20 hover:bg-cyan-500/40 rounded-t h-[40%] transition-all"></div>
+              <div class="flex-1 bg-cyan-500/30 hover:bg-cyan-500/50 rounded-t h-[65%] transition-all"></div>
+              <div class="flex-1 bg-cyan-500/40 hover:bg-cyan-500/60 rounded-t h-[55%] transition-all"></div>
+              <div class="flex-1 bg-cyan-500/50 hover:bg-cyan-500/70 rounded-t h-[80%] transition-all"></div>
+              <div class="flex-1 bg-cyan-500/60 hover:bg-cyan-500/80 rounded-t h-[95%] transition-all"></div>
+              <div class="flex-1 bg-cyan-400 rounded-t h-[90%]"></div>
+            </div>
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono border-t border-slate-800/80 pt-1">
+              <span>Feeder Load: 3,420 MW</span>
+              <span class="text-cyan-400">PM-KUSUM Sync</span>
+            </div>
+          </div>
+
+          <!-- Internet Connectivity & Telemetry -->
+          <div class="glass-panel p-3.5 rounded-2xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-slate-400 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                <span>📶</span> CONNECTIVITY
+              </span>
+              <span class="text-cyan-400 font-mono font-bold text-xs">95.1% ACTIVE</span>
+            </div>
+            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-cyan-500 to-indigo-500 h-full" style="width: 95.1%;"></div>
+            </div>
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+              <span>BharatNet Optical: 14,200 km</span>
+              <span class="text-emerald-400">Online</span>
+            </div>
+          </div>
+
+          <!-- Urban & Rural Mobility Telemetry -->
+          <div class="glass-panel p-3.5 rounded-2xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-slate-400 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                <span>🛣️</span> MOBILITY GRID
+              </span>
+              <span class="text-amber-400 font-mono font-bold text-xs">62M TRIPS</span>
+            </div>
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              PMGSY rural paved connectivity corroborated across 2,410 Gram Panchayats.
+            </p>
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono border-t border-slate-800/80 pt-1">
+              <span>All-Weather Roads: 88.2%</span>
+              <span class="text-amber-400">On Track</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Center Leaflet Map Canvas (6 Cols) -->
+        <div class="lg:col-span-6 glass-panel rounded-2xl border border-slate-800 overflow-hidden relative shadow-2xl flex flex-col">
           <div id="leaflet-map" class="w-full h-[520px]"></div>
           
+          <!-- Map Legend Overlay -->
           <div class="absolute bottom-3 left-3 z-[1000] bg-slate-900/90 backdrop-blur-md border border-slate-800 px-3 py-1.5 rounded-xl text-[11px] text-slate-300 flex items-center gap-3 shadow-lg">
-            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> Critical Need (DDDI &gt; 75)</span>
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span> Critical Need (DDDI &gt; 75)</span>
             <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> High Disparity</span>
             <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span> Corroborated Cluster</span>
           </div>
         </div>
 
-        <!-- Hotspot Inspector Sidebar (4 Cols) -->
-        <div class="lg:col-span-4 glass-panel p-5 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-4">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-              <span class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">Hotspot Inspector</span>
-              <span id="inspect-urgency-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/20 text-red-300 border border-red-500/40">SELECT A PIN</span>
+        <!-- Right Hotspot Inspector & Infrastructure Water Card (3 Cols) -->
+        <div class="lg:col-span-3 space-y-3">
+          
+          <!-- Water Resources Telemetry -->
+          <div class="glass-panel p-3.5 rounded-2xl border border-slate-800 space-y-1.5">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-slate-400 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                <span>💧</span> WATER RESOURCES
+              </span>
+              <span class="text-cyan-400 font-mono font-bold text-xs">72% CAPACITY</span>
+            </div>
+            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-full" style="width: 72%;"></div>
+            </div>
+            <span class="text-[10px] text-slate-400 block font-mono">Jal Jeevan Mission: 1.48L Taps Monitored</span>
+          </div>
+
+          <!-- Hotspot Inspector Sidebar Card -->
+          <div class="glass-panel p-4 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3 shadow-xl">
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-1.5">
+                <span class="text-[11px] font-mono font-bold text-cyan-400 tracking-wider uppercase">Hotspot Inspector</span>
+                <span id="inspect-urgency-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/20 text-red-300 border border-red-500/40">SELECT PIN</span>
+              </div>
+
+              <div id="inspector-placeholder" class="text-center py-8 text-slate-500 text-xs">
+                <div class="text-2xl mb-1.5">📍</div>
+                <p>Click any map marker to inspect verified demand signals, demographic vulnerability, and formulate capital project DPRs.</p>
+              </div>
+
+              <div id="inspector-content" class="space-y-2.5 text-xs hidden">
+                <div>
+                  <h3 id="inspect-title" class="font-bold text-slate-100 text-sm">Kasansur Water Crisis</h3>
+                  <p id="inspect-location" class="text-slate-400 text-[11px]">Gadchiroli (LGD: 990001) • Etapalli Block</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 bg-slate-900/90 p-2.5 rounded-xl border border-slate-800 font-mono">
+                  <div>
+                    <span class="text-slate-500 block text-[9px]">Demand Score:</span>
+                    <span id="inspect-score" class="text-base font-bold text-cyan-400">82.4 / 100</span>
+                  </div>
+                  <div>
+                    <span class="text-slate-500 block text-[9px]">Beneficiaries:</span>
+                    <span id="inspect-beneficiaries" class="text-base font-bold text-emerald-400">14,200</span>
+                  </div>
+                  <div>
+                    <span class="text-slate-500 block text-[9px]">Deficit Gap:</span>
+                    <span id="inspect-deficit" class="text-xs font-bold text-amber-400">78% Gap</span>
+                  </div>
+                  <div>
+                    <span class="text-slate-500 block text-[9px]">H3 Hex Index:</span>
+                    <span id="inspect-h3" class="text-[10px] text-purple-300">8860a2a1...</span>
+                  </div>
+                </div>
+
+                <div class="space-y-1">
+                  <span class="text-slate-400 font-semibold block text-[10px]">Ground Citizen Testimony:</span>
+                  <p id="inspect-testimony" class="italic text-slate-300 bg-slate-900/60 p-2 rounded-lg border border-slate-800 text-[11px] leading-relaxed">
+                    "Tap water off for 4 months. Children fell ill from well water."
+                  </p>
+                </div>
+
+                <div id="inspect-blindspot-alert" class="p-2 rounded-lg bg-red-950/40 border border-red-500/40 text-[11px] text-red-300 hidden">
+                  ⚠️ <strong>Government Blind Spot:</strong> Severe deficit with stalled government schemes.
+                </div>
+              </div>
             </div>
 
-            <div id="inspector-placeholder" class="text-center py-12 text-slate-500 text-xs">
-              <div class="text-3xl mb-2">📍</div>
-              <p>Click any circular marker on the map to inspect verified demand signals, demographic vulnerability, and formulate capital project DPRs.</p>
-            </div>
-
-            <div id="inspector-content" class="space-y-3 text-xs hidden">
-              <div>
-                <h3 id="inspect-title" class="font-bold text-slate-100 text-base">Kasansur Water Crisis</h3>
-                <p id="inspect-location" class="text-slate-400 text-xs">Gadchiroli (LGD: 990001) • Etapalli Block</p>
-              </div>
-
-              <div class="grid grid-cols-2 gap-2 bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
-                <div>
-                  <span class="text-slate-500 block text-[10px]">Demand Score:</span>
-                  <span id="inspect-score" class="text-lg font-bold text-cyan-400 font-mono">82.4 / 100</span>
-                </div>
-                <div>
-                  <span class="text-slate-500 block text-[10px]">Citizens Impacted:</span>
-                  <span id="inspect-beneficiaries" class="text-lg font-bold text-emerald-400 font-mono">14,200</span>
-                </div>
-                <div>
-                  <span class="text-slate-500 block text-[10px]">Sector Deficit:</span>
-                  <span id="inspect-deficit" class="text-sm font-bold text-amber-400 font-mono">78% Gap</span>
-                </div>
-                <div>
-                  <span class="text-slate-500 block text-[10px]">H3 Hex Index:</span>
-                  <span id="inspect-h3" class="text-xs font-mono text-purple-300">8860a2a1...</span>
-                </div>
-              </div>
-
-              <div class="space-y-1">
-                <span class="text-slate-400 font-semibold block text-[11px]">Ground Citizen Testimony:</span>
-                <p id="inspect-testimony" class="italic text-slate-300 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800 text-[11px] leading-relaxed">
-                  "Tap water off for 4 months. Children fell ill from well water."
-                </p>
-              </div>
-
-              <div id="inspect-blindspot-alert" class="p-2 rounded-lg bg-red-950/40 border border-red-500/40 text-[11px] text-red-300 hidden">
-                ⚠️ <strong>Government Blind Spot:</strong> Severe deficit with stalled government schemes.
-              </div>
+            <div id="inspector-action-box" class="pt-1 hidden">
+              <button id="inspect-formulate-btn" class="w-full py-2 px-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-cyan-600/30">
+                Formulate Capital Project Dossier →
+              </button>
             </div>
           </div>
 
-          <div id="inspector-action-box" class="pt-2 hidden">
-            <button id="inspect-formulate-btn" class="w-full py-2 px-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-cyan-600/30">
-              Formulate Capital Project Dossier →
-            </button>
-          </div>
         </div>
+
       </div>
     </div>
 
 
-    <!-- ========================================== -->
-    <!-- TAB 2: CITIZEN VOICE & WHATSAPP KIOSK      -->
-    <!-- ========================================== -->
+    <!-- ========================================================== -->
+    <!-- TAB 2: CITIZEN VOICE & WHATSAPP KIOSK (Matching Slide 5)   -->
+    <!-- ========================================================== -->
     <div id="tab-kiosk-content" class="space-y-4 hidden">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
         <!-- Left: WhatsApp Citizen Chat Simulator (5 Cols) -->
         <div class="lg:col-span-5 glass-panel rounded-2xl border border-slate-800 overflow-hidden flex flex-col shadow-2xl">
-          <!-- WhatsApp Header -->
+          <!-- WhatsApp Header Bar -->
           <div class="bg-[#1f2c34] p-3 flex items-center justify-between border-b border-slate-700">
             <div class="flex items-center gap-3">
               <div class="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center font-bold text-white text-sm">
                 जी
               </div>
               <div>
-                <h4 class="font-bold text-slate-100 text-xs">Jana-GatiShakti WhatsApp Bot</h4>
-                <span class="text-[10px] text-emerald-400 block font-medium">● Verified DPI Official Rail</span>
+                <div class="flex items-center gap-1.5">
+                  <h4 class="font-bold text-slate-100 text-xs">Jana-GatiShakti WhatsApp Bot</h4>
+                  <span class="text-emerald-400 text-xs font-bold" title="Verified Government Badge">✔</span>
+                </div>
+                <span class="text-[10px] text-emerald-400 block font-medium">● Verified Maharashtra DPI Rail</span>
               </div>
             </div>
             <span class="text-[10px] font-mono bg-slate-800 px-2 py-0.5 rounded text-slate-300">WhatsApp v2.26</span>
@@ -266,8 +359,8 @@
             <!-- Bot Welcome -->
             <div class="flex items-start">
               <div class="chat-bubble-in p-3 max-w-[85%] text-xs space-y-1.5 shadow">
-                <p class="font-semibold text-emerald-400">नमस्कार! जन-गतिशक्ती मध्ये आपले स्वागत आहे.</p>
-                <p>आपल्या गावातील पाणी, रस्ते, वीज किंवा आरोग्याच्या समस्या आवाजात सांगा किंवा संदेश पाठवा.</p>
+                <p class="font-semibold text-emerald-400">Welcome to Jana-GatiShakti Sovereign DPI Bot.</p>
+                <p>Report local drinking water, road, power, or healthcare emergencies in vernacular voice or text.</p>
                 <span class="text-[9px] text-slate-400 block text-right">10:00 AM</span>
               </div>
             </div>
@@ -282,7 +375,7 @@
                   </div>
                   <span class="text-[10px] text-emerald-200">0:38</span>
                 </div>
-                <p class="text-[11px] text-emerald-100 italic">"कासनसूर गावात नळाचे पाणी ४ महिन्यांपासून बंद आहे. फोन ९८२२१४५६७८..."</p>
+                <p class="text-[11px] text-emerald-100 italic">"In Kasansur village, tap water has been completely shut off for 4 months. Phone 9822145678, Aadhaar 4521 8901 2345..."</p>
                 <span class="text-[9px] text-emerald-300/80 block text-right">10:02 AM ✓✓</span>
               </div>
             </div>
@@ -290,8 +383,8 @@
             <!-- Bot Confirmation -->
             <div class="flex items-start">
               <div class="chat-bubble-in p-3 max-w-[85%] text-xs space-y-1.5 shadow">
-                <p class="text-cyan-300 font-bold">✓ तक्रार नोंदवली (तिकीट: K7Q2MX)</p>
-                <p class="text-[11px] text-slate-300">क्षेत्र: पाणी पुरवठा (Water) • तीव्रता: अतितातडीची (5/5). वैयक्तिक माहिती आपोआप हटवली आहे.</p>
+                <p class="text-cyan-300 font-bold">✓ Grievance Logged (Ticket: #K7Q2MX)</p>
+                <p class="text-[11px] text-slate-300">Sector: <strong>Water Supply</strong> • Urgency: <strong>5/5 Critical</strong>. Aadhaar and mobile phone number automatically scrubbed via Verhoeff algorithm under DPDP Act 2023.</p>
                 <span class="text-[9px] text-slate-400 block text-right">10:02 AM</span>
               </div>
             </div>
@@ -315,8 +408,8 @@
               </h3>
               <p class="text-xs text-slate-400">Marathi, Hindi, English • DPDP Act 2023 Verhoeff Sanitization</p>
             </div>
-            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">
-              Verhoeff Active
+            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800 font-bold">
+              Verhoeff Active ✓
             </span>
           </div>
 
@@ -325,16 +418,16 @@
             <span class="text-xs font-semibold text-slate-400 block">1-Click Test Scenarios:</span>
             <div class="flex flex-wrap gap-2 text-xs">
               <button onclick="loadPresetScenario('vidarbha')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
-                🌾 Vidarbha Water &amp; Health (Marathi)
+                🌾 Vidarbha Water &amp; Health
               </button>
               <button onclick="loadPresetScenario('nandurbar')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
-                ⛰️ Nandurbar Satpura Water (Marathi)
+                ⛰️ Satpura Mountain Water
               </button>
               <button onclick="loadPresetScenario('washim')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
-                ⚡ Washim Feeder Blackout (Marathi)
+                ⚡ Washim Feeder Blackout
               </button>
               <button onclick="loadPresetScenario('bastar')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
-                🌲 Bastar Tribal Road (Hindi)
+                🌲 Bastar Tribal Road
               </button>
             </div>
           </div>
@@ -386,39 +479,83 @@
     </div>
 
 
-    <!-- ========================================== -->
-    <!-- TAB 3: CAPITAL PROJECT PIPELINE            -->
-    <!-- ========================================== -->
+    <!-- ========================================================== -->
+    <!-- TAB 3: CAPITAL PROJECT PIPELINE (Matching Slide 8 Visual)  -->
+    <!-- ========================================================== -->
     <div id="tab-projects-content" class="space-y-4 hidden">
-      <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
-        <div>
-          <h3 class="font-bold text-slate-100 text-base">Nivesh-Drishti: Prioritized Capital Project Pipeline</h3>
-          <p class="text-xs text-slate-400">Bankable project dossiers synthesized from verified citizen voice demand</p>
+      
+      <!-- Sector Capex Breakdown Strip (Matching Slide 8) -->
+      <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
+          <div>
+            <h3 class="font-bold text-slate-100 text-base">INFRASTRUCTURE CAPITAL PROJECT PORTFOLIO</h3>
+            <p class="text-xs text-slate-400">Bankable Preliminary Project Reports (PPR) synthesized from corroborated citizen demand</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="window.open('/v1/opendata/ocds', '_blank')" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/40 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+              <span>📑</span> Export OCDS 1.1 JSON
+            </button>
+          </div>
         </div>
-        <div class="flex items-center gap-2">
-          <button onclick="window.open('/v1/opendata/ocds', '_blank')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg text-xs font-semibold">
-            Export OCDS 1.1 JSON
-          </button>
+
+        <!-- Sector Capex Distribution Bars -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs font-mono">
+          <div class="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+            <span class="text-slate-400 text-[10px] block">ROADS (PMGSY)</span>
+            <span class="font-bold text-orange-400 text-sm">₹ 180 Cr</span>
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
+              <div class="bg-orange-400 h-full" style="width: 42%;"></div>
+            </div>
+          </div>
+          <div class="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+            <span class="text-slate-400 text-[10px] block">WATER (JJM)</span>
+            <span class="font-bold text-cyan-400 text-sm">₹ 120 Cr</span>
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
+              <div class="bg-cyan-400 h-full" style="width: 28%;"></div>
+            </div>
+          </div>
+          <div class="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+            <span class="text-slate-400 text-[10px] block">POWER (KUSUM)</span>
+            <span class="font-bold text-amber-400 text-sm">₹ 65 Cr</span>
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
+              <div class="bg-amber-400 h-full" style="width: 15%;"></div>
+            </div>
+          </div>
+          <div class="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+            <span class="text-slate-400 text-[10px] block">HEALTH CLINICS</span>
+            <span class="font-bold text-red-400 text-sm">₹ 35 Cr</span>
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
+              <div class="bg-red-400 h-full" style="width: 8%;"></div>
+            </div>
+          </div>
+          <div class="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+            <span class="text-slate-400 text-[10px] block">TELECOM &amp; DPI</span>
+            <span class="font-bold text-purple-400 text-sm">₹ 20 Cr</span>
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
+              <div class="bg-purple-400 h-full" style="width: 5%;"></div>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- Project Cards Grid -->
       <div id="recommendations-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Populated via JS -->
       </div>
     </div>
 
 
-    <!-- ========================================== -->
-    <!-- TAB 4: MILP POLICY OPTIMIZER               -->
-    <!-- ========================================== -->
+    <!-- ========================================================== -->
+    <!-- TAB 4: MILP POLICY OPTIMIZER (Matching Slide 9 Visual)     -->
+    <!-- ========================================================== -->
     <div id="tab-simulator-content" class="space-y-4 hidden">
       <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-6">
         <div class="flex items-center justify-between border-b border-slate-800 pb-3">
           <div>
             <h3 class="font-bold text-slate-100 text-base flex items-center gap-2">
-              <span>📊</span> Mixed-Integer Linear Programming (MILP) Budget Optimizer
+              <span>📊</span> Mixed-Integer Linear Programming (MILP) Portfolio Optimizer
             </h3>
-            <p class="text-xs text-slate-400">Deterministic public welfare maximization subject to equity constraints</p>
+            <p class="text-xs text-slate-400">Deterministic public welfare maximization subject to statutory equity constraints</p>
           </div>
           <button onclick="runMILPOptimizer()" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-cyan-600/30">
             Solve Optimal Portfolio
@@ -463,33 +600,33 @@
             </div>
           </div>
 
-          <!-- Optimization Output Stats -->
-          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 flex flex-col justify-between space-y-4 text-xs">
+          <!-- Optimization Output Stats Box -->
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 flex flex-col justify-between space-y-4 text-xs font-mono">
             <div class="flex items-center justify-between">
               <span class="text-slate-400 font-bold uppercase tracking-wider text-xs">Mathematical Optimizer Results</span>
-              <span id="opt-solver-badge" class="px-2 py-0.5 rounded text-[11px] bg-cyan-950 text-cyan-300 border border-cyan-800 font-mono">PuLP-CBC</span>
+              <span id="opt-solver-badge" class="px-2 py-0.5 rounded text-[11px] bg-cyan-950 text-cyan-300 border border-cyan-800 font-mono">PuLP-CBC Optimal</span>
             </div>
 
-            <div class="space-y-3">
+            <div class="space-y-2.5">
               <div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/60">
                 <span class="text-slate-300">Selected Projects:</span>
-                <span id="sim-res-hotspots" class="font-bold text-cyan-400 text-base font-mono">11 / 17</span>
+                <span id="sim-res-hotspots" class="font-bold text-cyan-400 text-base">11 / 17</span>
               </div>
               <div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/60">
                 <span class="text-slate-300">Allocated Capex:</span>
-                <span id="sim-res-capex" class="font-bold text-amber-400 text-base font-mono">₹ 96.95 Cr</span>
+                <span id="sim-res-capex" class="font-bold text-amber-400 text-base">₹ 96.95 Cr</span>
               </div>
               <div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/60">
                 <span class="text-slate-300">Aspirational Share Achieved:</span>
-                <span id="sim-res-rate" class="font-bold text-emerald-400 text-base font-mono">100.0%</span>
+                <span id="sim-res-rate" class="font-bold text-emerald-400 text-base">100.0%</span>
               </div>
               <div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/60">
                 <span class="text-slate-300">Active Binding Constraint:</span>
-                <span id="sim-res-binding" class="font-bold text-slate-200 text-xs font-mono">Total Budget Cap</span>
+                <span id="sim-res-binding" class="font-bold text-slate-200 text-xs">Single-Sector Diversity Cap</span>
               </div>
             </div>
 
-            <p class="text-[11px] text-slate-400 italic">
+            <p class="text-[11px] text-slate-400 italic font-sans">
               Exact mathematical optimization. Numbers reflect objective welfare values, not LLM guesses.
             </p>
           </div>
@@ -498,14 +635,14 @@
     </div>
 
 
-    <!-- ========================================== -->
-    <!-- TAB 5: JAN-PRAMAN & AUDIT SENTINEL        -->
-    <!-- ========================================== -->
+    <!-- ========================================================== -->
+    <!-- TAB 5: JAN-PRAMAN & AUDIT SENTINEL (Matching Slide 10)     -->
+    <!-- ========================================================== -->
     <div id="tab-audit-content" class="space-y-6 hidden">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-        <!-- Jan-Praman Ghost Asset Sentinel -->
-        <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-4">
+        <!-- Jan-Praman Ghost Asset Sentinel (Discrepancy Box) -->
+        <div class="glass-panel p-5 rounded-2xl border border-red-500/40 space-y-4 shadow-xl">
           <div class="flex items-center justify-between border-b border-slate-800 pb-2">
             <div>
               <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
@@ -513,8 +650,8 @@
               </h3>
               <p class="text-xs text-slate-400">Post-completion IVR surveys cross-checking contractor claims</p>
             </div>
-            <span class="px-2 py-0.5 rounded text-[11px] bg-red-500/20 text-red-300 border border-red-500/40 font-bold">
-              2 Discrepancies
+            <span class="px-2 py-0.5 rounded text-[11px] bg-red-500/20 text-red-300 border border-red-500/40 font-bold animate-pulse">
+              DISCREPANCY DETECTED
             </span>
           </div>
 
@@ -524,7 +661,7 @@
         </div>
 
         <!-- Cryptographic Hash-Chained Audit Ledger -->
-        <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-4">
+        <div class="glass-panel p-5 rounded-2xl border border-cyan-500/40 space-y-4 shadow-xl">
           <div class="flex items-center justify-between border-b border-slate-800 pb-2">
             <div>
               <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
@@ -537,19 +674,19 @@
             </button>
           </div>
 
-          <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 space-y-2 text-xs">
+          <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 space-y-2 text-xs font-mono">
             <div class="flex items-center justify-between">
               <span class="text-slate-400">Ledger Status:</span>
-              <span id="stat-audit-status" class="text-emerald-400 font-bold font-mono">CHAIN VERIFIED ✓</span>
+              <span id="stat-audit-status" class="text-emerald-400 font-bold">CHAIN VERIFIED ✓</span>
             </div>
             <div class="flex items-center justify-between">
               <span class="text-slate-400">Anchor Standard:</span>
-              <span class="text-slate-300 font-mono">Ed25519 WORM MinIO</span>
+              <span class="text-slate-300">Ed25519 WORM MinIO</span>
             </div>
           </div>
 
           <div class="space-y-2">
-            <span class="text-xs font-semibold text-slate-400 block">Recent Immutable Audit Blocks:</span>
+            <span class="text-xs font-semibold text-slate-400 block font-mono">Recent Immutable Audit Blocks:</span>
             <div id="audit-logs-display" class="space-y-2 max-h-[300px] overflow-y-auto text-[11px] font-mono">
               <!-- Populated via JS -->
             </div>
@@ -573,30 +710,30 @@
 
       <div class="space-y-2 text-slate-300 bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 leading-relaxed">
         <div class="flex items-center justify-between text-[11px] text-cyan-400 pb-1">
-          <span>मराठी (Marathi) / हिन्दी / English</span>
+          <span>Notice in Common English (With Vernacular Speech Prompts)</span>
           <button onclick="playConsentAudioPrompt()" class="underline hover:text-cyan-300">🔊 Read Aloud</button>
         </div>
-        <p><strong>जन-गतिशक्ती: तुमची संमती</strong></p>
-        <p>तुमच्या गावाच्या गरजा समजून घेण्यासाठी आणि सार्वजनिक कामांचे नियोजन करण्यासाठी आम्ही तुमचा आवाज किंवा संदेश नोंदवू.</p>
+        <p><strong>Jana-GatiShakti: Your Privacy &amp; Consent</strong></p>
+        <p>To understand your village's infrastructure needs and plan public works, we record your voice or message feedback.</p>
         <ul class="list-disc pl-4 space-y-1 text-slate-400">
-          <li>आम्ही तुमचे नाव, आधार किंवा संपर्क यादी घेत नाही. वैयक्तिक माहिती आपोआप काढून टाकली जाते.</li>
-          <li>तुमचा मोबाइल क्रमांक गुप्त कोड (HMAC-SHA256) मध्ये बदलला जातो; अधिकारी तो कधीही पाहत नाहीत.</li>
-          <li>आवाजाची नोंद ३० दिवसांत हटवली जाते; ओळख-रहित संदेश योजना कमाल ३ वर्षे ठेवला जातो.</li>
+          <li>We do not store your name, Aadhaar, or personal contact details. Personal data is automatically scrubbed via Verhoeff algorithms.</li>
+          <li>Your mobile phone number is converted into a secret cryptographic code (HMAC-SHA256); officials never see your real number.</li>
+          <li>Audio voice recordings are purged within 30 days; anonymized demand records are retained for capex planning.</li>
         </ul>
       </div>
 
       <div class="flex flex-wrap items-center justify-end gap-2.5 pt-2">
-        <button onclick="confirmConsentAndSubmit(false)" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg font-medium">
-          [I Agree / सहमत आहे]
+        <button onclick="confirmConsentAndSubmit(false)" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg font-medium">
+          [I Agree / Give Consent]
         </button>
         <button onclick="confirmConsentAndSubmit(true)" class="px-4 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-bold shadow-lg shadow-cyan-600/30">
-          [Agree + Share GPS / संमती + स्थान]
+          [Agree + Share GPS Location]
         </button>
       </div>
     </div>
   </div>
 
-  <!-- EXPLAINABILITY WATERFALL DRAWER / MODAL (Section 7.5) -->
+  <!-- EXPLAINABILITY ATTRIBUTION DRAWER -->
   <div id="explain-drawer-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
     <div class="glass-panel p-6 rounded-2xl max-w-2xl w-full border border-indigo-500/40 shadow-2xl relative space-y-4">
       <button onclick="closeExplainModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 font-bold text-lg">✕</button>
@@ -606,7 +743,7 @@
     </div>
   </div>
 
-  <!-- FULL PROJECT DOSSIER MODAL -->
+  <!-- FULL PROJECT DOSSIER MEMO MODAL -->
   <div id="dossier-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
     <div class="glass-panel p-6 rounded-2xl max-w-2xl w-full border border-cyan-500/40 shadow-2xl relative">
       <button onclick="closeDossierModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 font-bold text-lg">✕</button>
@@ -629,9 +766,11 @@
         <span>DPDP Act 2023 Aligned</span>
       </div>
       <div class="flex items-center gap-3">
-        <a href="/v1/opendata/geojson" target="_blank" class="hover:text-cyan-400 transition font-mono">GeoJSON Endpoint</a>
+        <a href="/download/deck" class="text-amber-400 hover:underline font-mono">📥 Download PPTX Deck</a>
         <span>•</span>
-        <a href="/v1/opendata/ocds" target="_blank" class="hover:text-cyan-400 transition font-mono">Open Contracting (OCDS)</a>
+        <a href="/presentation" class="hover:text-cyan-400 transition font-mono">12-Slide Deck</a>
+        <span>•</span>
+        <a href="/v1/opendata/ocds" target="_blank" class="hover:text-cyan-400 transition font-mono">OCDS 1.1 JSON</a>
         <span>•</span>
         <a href="/v1/audit/verify" target="_blank" class="hover:text-cyan-400 transition font-mono">Verify Audit Chain</a>
       </div>

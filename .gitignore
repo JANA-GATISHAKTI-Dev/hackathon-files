@@ -61,3 +61,7 @@ logs/
 temp/
 tmp/
 .cache/
+
+# Office temp lock files
+~$*
+
