@@ -346,3 +346,11 @@ async def serve_presentation():
     if os.path.exists(pres_file):
         return FileResponse(pres_file)
     return {"message": "presentation.html not found"}
+
+@app.get("/submission")
+async def serve_submission():
+    sub_file = os.path.join(frontend_path, "submission.html")
+    if os.path.exists(sub_file):
+        return FileResponse(sub_file)
+    return {"message": "submission.html not found"}
+
