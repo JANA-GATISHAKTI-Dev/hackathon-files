@@ -1,16 +1,18 @@
 """
 Curated Multilingual Citizen Development Requests Dataset.
-Spans Indian Vernaculars (Hindi, Marathi, Tamil, Telugu, Kannada, English) and BRICS languages.
+Spans Maharashtra Pilot (Gadchiroli 990001, Nandurbar 990002, Washim 990003) + Aspirational Districts & BRICS.
 Simulates multi-channel ingestion: Voice IVR, WhatsApp bot, SMS, and Gram Panchayat Kiosk.
 """
 
 from typing import List, Dict, Any
 
 CITIZEN_REQUESTS: List[Dict[str, Any]] = [
-    # GADCHIROLI (MAHARASHTRA) - TRIBAL & FOREST BELT
+    # 1. GADCHIROLI (MAHARASHTRA, LGD: 990001) - TRIBAL & FOREST BELT
     {
         "id": "REQ-IN-001",
-        "district_id": "IN-DIST-01",
+        "district_id": "990001",
+        "lgd_district_code": "990001",
+        "lgd_village_code": "990000101",
         "district_name": "Gadchiroli (Vidarbha)",
         "village_or_ward": "Etapalli / Kasansur Gram Panchayat",
         "lat": 19.6845,
@@ -19,16 +21,21 @@ CITIZEN_REQUESTS: List[Dict[str, Any]] = [
         "original_language": "Marathi",
         "lang_code": "mr",
         "raw_content": "माझं नाव आनंदराव कोवासे आहे, मोबाइल 9822145678. कासनसूर गावात नळाचे पाणी ४ महिन्यांपासून पूर्ण बंद आहे. विहिरीचे पाणी पिऊन १० मुले आजारी पडली आहेत. प्राथमिक आरोग्य केंद्रात वीज नाही आणि अँटीव्हेनम उपलब्ध नाही. कृपया तात्काळ मदत करा.",
-        "english_translation": "My name is Anandrao Kowase, mobile 9822145678. In Kasansur village, tap water has been completely shut for 4 months. 10 children fell ill drinking well water. The primary health center has no electricity and no antivenom. Please help immediately.",
+        "sanitized_content": "माझं नाव [REDACTED_CITIZEN_NAME], मोबाइल [REDACTED_PHONE]. कासनसूर गावात नळाचे पाणी ४ महिन्यांपासून पूर्ण बंद आहे. विहिरीचे पाणी पिऊन १० मुले आजारी पडली आहेत. प्राथमिक आरोग्य केंद्रात वीज नाही आणि अँटीव्हेनम उपलब्ध नाही. कृपया तात्काळ मदत करा.",
+        "english_translation": "My name is [REDACTED], mobile [REDACTED]. In Kasansur village, tap water has been completely shut for 4 months. 10 children fell ill drinking well water. The primary health center has no electricity and no antivenom. Please help immediately.",
         "sector": "water",
         "secondary_sector": "health",
         "severity": 5,
         "corroboration_count": 42,
-        "timestamp": "2026-09-24T08:15:00Z"
+        "timestamp": "2026-09-24T08:15:00Z",
+        "status": "processed",
+        "hashed_id": "hid_k3v7q2m5x9a4b6c8d2e7f3g5h9j2k4m6"
     },
     {
         "id": "REQ-IN-002",
-        "district_id": "IN-DIST-01",
+        "district_id": "990001",
+        "lgd_district_code": "990001",
+        "lgd_village_code": "990000102",
         "district_name": "Gadchiroli (Vidarbha)",
         "village_or_ward": "Bhamragad / Arewada",
         "lat": 19.3871,
@@ -37,16 +44,21 @@ CITIZEN_REQUESTS: List[Dict[str, Any]] = [
         "original_language": "Marathi",
         "lang_code": "mr",
         "raw_content": "नदीवरचा तात्पुरता पूल वाहून गेला आहे. ५ गावांचा संपर्क तुटला आहे. रुग्णवाहिका गावात येऊ शकत नाही. भारतनेट केबल तुटल्यामुळे रेशन बायोमेट्रिक चालत नाही.",
+        "sanitized_content": "नदीवरचा तात्पुरता पूल वाहून गेला आहे. ५ गावांचा संपर्क तुटला आहे. रुग्णवाहिका गावात येऊ शकत नाही. भारतनेट केबल तुटल्यामुळे रेशन बायोमेट्रिक चालत नाही.",
         "english_translation": "Temporary bridge over the river was washed away. 5 villages are cut off. Ambulance cannot enter the village. BharatNet cable is broken so ration shop biometric does not work.",
         "sector": "roads",
         "secondary_sector": "telecom",
         "severity": 5,
         "corroboration_count": 67,
-        "timestamp": "2026-09-24T10:30:00Z"
+        "timestamp": "2026-09-24T10:30:00Z",
+        "status": "processed",
+        "hashed_id": "hid_p8n2c5v7b3x6z9m4q1w7e3r5t8y2u6i4"
     },
     {
         "id": "REQ-IN-003",
-        "district_id": "IN-DIST-01",
+        "district_id": "990001",
+        "lgd_district_code": "990001",
+        "lgd_village_code": "990000103",
         "district_name": "Gadchiroli (Vidarbha)",
         "village_or_ward": "Kurkheda / Nanhi GP",
         "lat": 20.3500,
@@ -55,18 +67,96 @@ CITIZEN_REQUESTS: List[Dict[str, Any]] = [
         "original_language": "Hindi",
         "lang_code": "hi",
         "raw_content": "हमारे गांव में 11 केवी का ट्रांसफॉर्मर 3 महीने से जला हुआ है। धान की फसल सिंचाई के बिना सूख रही है। बिजली विभाग कहता है बजट नहीं है।",
+        "sanitized_content": "हमारे गांव में 11 केवी का ट्रांसफॉर्मर 3 महीने से जला हुआ है। धान की फसल सिंचाई के बिना सूख रही है। बिजली विभाग कहता है बजट नहीं है।",
         "english_translation": "In our village the 11kV transformer has been burnt for 3 months. Paddy crop is drying without irrigation. Electricity department says there is no budget.",
         "sector": "power",
         "secondary_sector": "roads",
         "severity": 4,
         "corroboration_count": 31,
-        "timestamp": "2026-09-25T07:20:00Z"
+        "timestamp": "2026-09-25T07:20:00Z",
+        "status": "needs_review",
+        "hashed_id": "hid_m2v4q6x8b1c3d5f7g9j2k4m6n8p1q3r5"
     },
 
-    # CHITRAKOOT (BUNDELKHAND, UP) - DROUGHT & ROCKY TERRAIN
+    # 2. NANDURBAR (MAHARASHTRA, LGD: 990002) - SATPURA TRIBAL BELT
     {
         "id": "REQ-IN-004",
-        "district_id": "IN-DIST-02",
+        "district_id": "990002",
+        "lgd_district_code": "990002",
+        "lgd_village_code": "990000201",
+        "district_name": "Nandurbar (Satpura)",
+        "village_or_ward": "Dhadgaon / Akrani GP",
+        "lat": 21.8341,
+        "lon": 74.2215,
+        "channel": "voice_ivr",
+        "original_language": "Marathi",
+        "lang_code": "mr",
+        "raw_content": "धडगाव तालुक्यातील मोलगी पाड्यात सोलर पंप ६ महिन्यांपासून बंद पडल्यामुळे महिलांना खोल दरीतून दूषित पाणी आणावे लागते. १० गर्भवती महिलांना कावीळ झाली आहे.",
+        "sanitized_content": "धडगाव तालुक्यातील मोलगी पाड्यात सोलर पंप ६ महिन्यांपासून बंद पडल्यामुळे महिलांना खोल दरीतून दूषित पाणी आणावे लागते. १० गर्भवती महिलांना कावीळ झाली आहे.",
+        "english_translation": "In Dhadgaon taluka's Molgi hamlet, solar water pump is broken for 6 months. Women fetch contaminated water from deep gorge. 10 pregnant women diagnosed with jaundice.",
+        "sector": "water",
+        "secondary_sector": "health",
+        "severity": 5,
+        "corroboration_count": 76,
+        "timestamp": "2026-09-24T11:15:00Z",
+        "status": "processed",
+        "hashed_id": "hid_x1z3v5b7n9m2q4w6e8r0t2y4u6i8o1p3"
+    },
+    {
+        "id": "REQ-IN-005",
+        "district_id": "990002",
+        "lgd_district_code": "990002",
+        "lgd_village_code": "990000202",
+        "district_name": "Nandurbar (Satpura)",
+        "village_or_ward": "Molgi Tribal Hamlet",
+        "lat": 21.7214,
+        "lon": 74.0512,
+        "channel": "whatsapp",
+        "original_language": "Marathi",
+        "lang_code": "mr",
+        "raw_content": "सातपुड्यातील डोंगराळ रस्त्यावर दरड कोसळल्यामुळे रुग्णवाहिका आणि एसटी बस सेवा ठप्प झाली आहे. आदिवासी पाड्यांचा संपर्क तुटला आहे.",
+        "sanitized_content": "सातपुड्यातील डोंगराळ रस्त्यावर दरड कोसळल्यामुळे रुग्णवाहिका आणि एसटी बस सेवा ठप्प झाली आहे. आदिवासी पाड्यांचा संपर्क तुटला आहे.",
+        "english_translation": "Landslide on Satpura mountain road halted ambulance and bus transport. Tribal hamlets cut off from primary healthcare centre.",
+        "sector": "roads",
+        "secondary_sector": "health",
+        "severity": 5,
+        "corroboration_count": 58,
+        "timestamp": "2026-09-25T09:40:00Z",
+        "status": "needs_review",
+        "hashed_id": "hid_c2v4b6n8m1q3w5e7r9t1y3u5i7o9p2a4"
+    },
+
+    # 3. WASHIM (MAHARASHTRA, LGD: 990003) - VIDARBHA AGRARIAN BELT
+    {
+        "id": "REQ-IN-006",
+        "district_id": "990003",
+        "lgd_district_code": "990003",
+        "lgd_village_code": "990000301",
+        "district_name": "Washim (Vidarbha)",
+        "village_or_ward": "Manora / Someshwar Ward",
+        "lat": 20.2185,
+        "lon": 77.5512,
+        "channel": "voice_ivr",
+        "original_language": "Marathi",
+        "lang_code": "mr",
+        "raw_content": "मानोरा तालुक्यात शेती पंपांना रात्री फक्त २ तास वीज मिळते. कमी व्होल्टेजमुळे २० शेतकर्‍यांच्या मोटारी जळाल्या आहेत. पिके सुकली आहेत.",
+        "sanitized_content": "मानोरा तालुक्यात शेती पंपांना रात्री फक्त २ तास वीज मिळते. कमी व्होल्टेजमुळे २० शेतकर्‍यांच्या मोटारी जळाल्या आहेत. पिके सुकली आहेत.",
+        "english_translation": "In Manora taluka agricultural pumps get power only 2 hours at night. Low voltage burned motors of 20 farmers. Standing crops dried.",
+        "sector": "power",
+        "secondary_sector": "water",
+        "severity": 4,
+        "corroboration_count": 68,
+        "timestamp": "2026-09-24T16:20:00Z",
+        "status": "processed",
+        "hashed_id": "hid_b3n5m7q9w2e4r6t8y1u3i5o7p9a2s4d6"
+    },
+
+    # 4. CHITRAKOOT (BUNDELKHAND, UP, LGD: 164)
+    {
+        "id": "REQ-IN-007",
+        "district_id": "164",
+        "lgd_district_code": "164",
+        "lgd_village_code": "090000101",
         "district_name": "Chitrakoot (Bundelkhand)",
         "village_or_ward": "Manikpur / Ranipur Hamlet",
         "lat": 25.0450,
@@ -75,54 +165,23 @@ CITIZEN_REQUESTS: List[Dict[str, Any]] = [
         "original_language": "Hindi",
         "lang_code": "hi",
         "raw_content": "मानिकपुर के रानीपुर मजरे में जल जीवन मिशन की पाइपलाइन तो बिछा दी गई लेकिन पानी एक दिन भी नहीं आया। महिलाएं 3 किलोमीटर दूर पथरीले रास्ते से पानी लाती हैं। आधार कार्ड नंबर 4521 8901 2345 है।",
-        "english_translation": "In Manikpur's Ranipur hamlet, Jal Jeevan Mission pipeline was laid but water never came even for a single day. Women walk 3 km on rocky tracks to fetch water. Aadhaar number 4521 8901 2345.",
+        "sanitized_content": "मानिकपुर के रानीपुर मजरे में जल जीवन मिशन की पाइपलाइन तो बिछा दी गई लेकिन पानी एक दिन भी नहीं आया। महिलाएं 3 किलोमीटर दूर पथरीले रास्ते से पानी लाती हैं। आधार कार्ड नंबर [REDACTED_AADHAAR] है।",
+        "english_translation": "In Manikpur's Ranipur hamlet, Jal Jeevan Mission pipeline was laid but water never came even for a single day. Women walk 3 km on rocky tracks to fetch water. Aadhaar number [REDACTED].",
         "sector": "water",
         "secondary_sector": "roads",
         "severity": 5,
         "corroboration_count": 89,
-        "timestamp": "2026-09-23T14:40:00Z"
-    },
-    {
-        "id": "REQ-IN-005",
-        "district_id": "IN-DIST-02",
-        "district_name": "Chitrakoot (Bundelkhand)",
-        "village_or_ward": "Mau / Kol Majra",
-        "lat": 25.2600,
-        "lon": 81.3800,
-        "channel": "whatsapp",
-        "original_language": "Hindi",
-        "lang_code": "hi",
-        "raw_content": "प्राथमिक विद्यालय में बालिकाओं के लिए शौचालय की कोई व्यवस्था नहीं है। पानी की टंकी टूटी है। बेटियां स्कूल छोड़ रही हैं। फोन: 9450123987।",
-        "english_translation": "No functional toilet facility for girls in primary school. Water tank is broken. Girls are dropping out of school. Phone: 9450123987.",
-        "sector": "sanitation",
-        "secondary_sector": "water",
-        "severity": 4,
-        "corroboration_count": 53,
-        "timestamp": "2026-09-24T12:05:00Z"
-    },
-    {
-        "id": "REQ-IN-006",
-        "district_id": "IN-DIST-02",
-        "district_name": "Chitrakoot (Bundelkhand)",
-        "village_or_ward": "Karwi / Ramnagar",
-        "lat": 25.2100,
-        "lon": 80.9100,
-        "channel": "sms",
-        "original_language": "Hindi",
-        "lang_code": "hi",
-        "raw_content": "सामुदायिक स्वास्थ्य केंद्र में डिलीवरी के लिए कोई महिला डॉक्टर नहीं है। रात में बिजली गुल रहती है और जनरेटर में डीजल नहीं होता।",
-        "english_translation": "No female gynecologist doctor available at Community Health Centre for deliveries. Power cuts at night and generator has no diesel.",
-        "sector": "health",
-        "secondary_sector": "power",
-        "severity": 5,
-        "corroboration_count": 76,
-        "timestamp": "2026-09-25T16:15:00Z"
+        "timestamp": "2026-09-23T14:40:00Z",
+        "status": "processed",
+        "hashed_id": "hid_d4f6g8j1k3m5p7r9t2v4x6z8b1c3d5f7"
     },
 
-    # BASTAR (CHHATTISGARH) - REMOTE TRIBAL FOREST
+    # 5. BASTAR (CHHATTISGARH, LGD: 374)
     {
-        "id": "REQ-IN-007",
-        "district_id": "IN-DIST-03",
+        "id": "REQ-IN-008",
+        "district_id": "374",
+        "lgd_district_code": "374",
+        "lgd_village_code": "220000101",
         "district_name": "Bastar (Jagdalpur)",
         "village_or_ward": "Tokapal / Bade Kilepal",
         "lat": 18.9100,
@@ -131,36 +190,23 @@ CITIZEN_REQUESTS: List[Dict[str, Any]] = [
         "original_language": "Hindi",
         "lang_code": "hi",
         "raw_content": "हमारे बडेकिलेपाल गांव से मुख्य सड़क तक 7 किलोमीटर कोई पक्की सड़क नहीं है। नाले पर पुलिया नहीं है। पिछले हफ्ते प्रसव पीड़ा के दौरान एक महिला को खाट पर ले जाते समय रास्ते में दम तोड़ दिया।",
+        "sanitized_content": "हमारे बडेकिलेपाल गांव से मुख्य सड़क तक 7 किलोमीटर कोई पक्की सड़क नहीं है। नाले पर पुलिया नहीं है। पिछले हफ्ते प्रसव पीड़ा के दौरान एक महिला को खाट पर ले जाते समय रास्ते में दम तोड़ दिया।",
         "english_translation": "No all-weather paved road for 7 km connecting Bade Kilepal to main highway. No culvert over the stream. Last week a pregnant woman died on a cot while being carried.",
         "sector": "roads",
         "secondary_sector": "health",
         "severity": 5,
         "corroboration_count": 114,
-        "timestamp": "2026-09-22T11:00:00Z"
-    },
-    {
-        "id": "REQ-IN-008",
-        "district_id": "IN-DIST-03",
-        "district_name": "Bastar (Jagdalpur)",
-        "village_or_ward": "Lohandiguda / Chitrakote Forest",
-        "lat": 19.2000,
-        "lon": 81.7100,
-        "channel": "whatsapp",
-        "original_language": "Hindi",
-        "lang_code": "hi",
-        "raw_content": "गांव में सौर ऊर्जा की मिनी ग्रिड की बैटरियां 6 महीने पहले खराब हो गई हैं। पूरा गांव अंधेरे में है। मोबाइल टावर का सिग्नल भी 10 किलोमीटर तक नहीं आता।",
-        "english_translation": "Mini solar grid batteries died 6 months ago in the village. Entire village in pitch darkness. No mobile tower signal for 10 km.",
-        "sector": "power",
-        "secondary_sector": "telecom",
-        "severity": 4,
-        "corroboration_count": 45,
-        "timestamp": "2026-09-23T18:25:00Z"
+        "timestamp": "2026-09-22T11:00:00Z",
+        "status": "processed",
+        "hashed_id": "hid_g5j7k9m2p4r6t8v1x3z5b7c9d1f3g5j7"
     },
 
-    # RAICHUR (KARNATAKA) - ARSENIC & FLUORIDE WATER BELT
+    # 6. RAICHUR (KARNATAKA, LGD: 547)
     {
         "id": "REQ-IN-009",
-        "district_id": "IN-DIST-04",
+        "district_id": "547",
+        "lgd_district_code": "547",
+        "lgd_village_code": "290000101",
         "district_name": "Raichur (Kalyana-Karnataka)",
         "village_or_ward": "Manvi / Potnal Grama",
         "lat": 16.0100,
@@ -168,37 +214,24 @@ CITIZEN_REQUESTS: List[Dict[str, Any]] = [
         "channel": "voice_ivr",
         "original_language": "Kannada",
         "lang_code": "kn",
-        "raw_content": "ನನ್ನ ಹೆಸರು ಮಲ್ಲೇಶಪ್ಪ, ಮಾನ್ವಿ ತಾಲ್ಲೂಕು. ನಮ್ಮ ಗ್ರಾಮದ ಕೊಳವೆ ಬಾವಿ ನೀರಿನಲ್ಲಿ ಆರ್ಸೆನಿಕ್ ಮತ್ತು ಫ್ಲೋರೈಡ್ ವಿಷಕಾರಿ ಪ್ರಮಾಣದಲ್ಲಿದೆ. ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಘಟಕ (RO ಪ್ಲಾಂಟ್) 8 ತಿಂಗಳಿನಿಂದ ಮುಚ್ಚಲ್ಪಟ್ಟಿದೆ. ಜನರು ಕೀಲು ನೋವಿನಿಂದ ಬಳಲುತ್ತಿದ್ದಾರೆ.",
-        "english_translation": "My name is Malleshappa, Manvi taluk. Arsenic and fluoride are toxic in our borewell water. Pure drinking water RO plant is shut for 8 months. Villagers suffering from crippling fluorosis.",
+        "raw_content": "ನನ್ನ ಹೆಸರು ಮಲ್ಲೇಶಪ್ಪ, ಮಾನ್ವಿ ತಾಲ್ಲೂಕು. ನಮ್ಮ ಗ್ರಾಮದ ಕೊಳವೆ ಬಾವಿ ನೀರಿನಲ್ಲಿ ಆರ್ಸೆನಿಕ್ ಮತ್ತು ಫ್ಲೋರೈಡ್ ವಿಷಕಾರಿ ಪ್ರಮಾಣದಲ್ಲಿದೆ. ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಘಟಕ (RO ಪ್ಲಾಂಟ್) 8 ತಿಂಗಳಿನಿಂದ ಮುಚ್ಚಲ್ಪಟ್ಟಿದೆ.",
+        "sanitized_content": "ನನ್ನ ಹೆಸರು [REDACTED_CITIZEN_NAME], ಮಾನ್ವಿ ತಾಲ್ಲೂಕು. ನಮ್ಮ ಗ್ರಾಮದ ಕೊಳವೆ ಬಾವಿ ನೀರಿನಲ್ಲಿ ಆರ್ಸೆನಿಕ್ ಮತ್ತು ಫ್ಲೋರೈಡ್ ವಿಷಕಾರಿ ಪ್ರಮಾಣದಲ್ಲಿದೆ. ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಘಟಕ (RO ಪ್ಲಾಂಟ್) 8 ತಿಂಗಳಿನಿಂದ ಮುಚ್ಚಲ್ಪಟ್ಟಿದೆ.",
+        "english_translation": "My name is [REDACTED], Manvi taluk. Arsenic and fluoride are toxic in our borewell water. Pure drinking water RO plant is shut for 8 months. Villagers suffering from fluorosis.",
         "sector": "water",
         "secondary_sector": "health",
         "severity": 5,
         "corroboration_count": 92,
-        "timestamp": "2026-09-24T09:45:00Z"
-    },
-    {
-        "id": "REQ-IN-010",
-        "district_id": "IN-DIST-04",
-        "district_name": "Raichur (Kalyana-Karnataka)",
-        "village_or_ward": "Sindhanur / Jawalagera",
-        "lat": 15.7700,
-        "lon": 76.7600,
-        "channel": "whatsapp",
-        "original_language": "Kannada",
-        "lang_code": "kn",
-        "raw_content": "ರೈತರ ಪಂಪ್‌ಸೆಟ್‌ಗಳಿಗೆ 3-ಫೇಸ್ ವಿದ್ಯುತ್ ದಿನಕ್ಕೆ ಕೇವಲ 3 ಗಂಟೆ ಮಾತ್ರ ಸಿಗುತ್ತಿದೆ. ಅದೂ ಮಧ್ಯರಾತ್ರಿಯಲ್ಲಿ. ಕಡಿಮೆ ವೋಲ್ಟೇಜ್‌ನಿಂದಾಗಿ 20ಕ್ಕೂ ಹೆಚ್ಚು ಮೋಟಾರ್‌ಗಳು ಸುಟ್ಟುಹೋಗಿವೆ.",
-        "english_translation": "Farmers getting 3-phase power for pumpsets only 3 hours a day, that too at midnight. Low voltage burned more than 20 irrigation pump motors.",
-        "sector": "power",
-        "secondary_sector": "water",
-        "severity": 4,
-        "corroboration_count": 63,
-        "timestamp": "2026-09-25T13:10:00Z"
+        "timestamp": "2026-09-24T09:45:00Z",
+        "status": "processed",
+        "hashed_id": "hid_k6m8p1r3t5v7x9z2b4c6d8f1g3j5k7m9"
     },
 
-    # NUH / MEWAT (HARYANA) - SALINE WATER & HEALTH DEFICIT
+    # 7. NUH / MEWAT (HARYANA, LGD: 85)
     {
-        "id": "REQ-IN-011",
-        "district_id": "IN-DIST-05",
+        "id": "REQ-IN-010",
+        "district_id": "85",
+        "lgd_district_code": "85",
+        "lgd_village_code": "060000101",
         "district_name": "Nuh (Mewat)",
         "village_or_ward": "Punhana / Jamun Khera",
         "lat": 27.8700,
@@ -206,95 +239,23 @@ CITIZEN_REQUESTS: List[Dict[str, Any]] = [
         "channel": "voice_ivr",
         "original_language": "Hindi",
         "lang_code": "hi",
-        "raw_content": "पुन्हाना के जामुन खेड़ा में भूजल पूरी तरह खारा और जहरीला है। सरकारी नहर का पानी यहां तक नहीं पहुंचता। प्राइवेट टैंकर वाले 1000 रुपये प्रति टैंकर मांगते हैं जो गरीब मजदूर नहीं दे सकते।",
-        "english_translation": "In Jamun Khera, underground water is completely saline and toxic. Canal water does not reach here. Private tanker cartel charges 1000 rupees which daily wage laborers cannot afford.",
+        "raw_content": "पुन्हाना के जामुन खेड़ा में भूजल पूरी तरह खारा और जहरीला है। सरकारी नहर का पानी यहां तक नहीं पहुंचता। प्राइवेट टैंकर वाले 1000 रुपये प्रति टैंकर मांगते हैं।",
+        "sanitized_content": "पुन्हाना के जामुन खेड़ा में भूजल पूरी तरह खारा और जहरीला है। सरकारी नहर का पानी यहां तक नहीं पहुंचता। प्राइवेट टैंकर वाले 1000 रुपये प्रति टैंकर मांगते हैं।",
+        "english_translation": "In Jamun Khera, underground water is completely saline and toxic. Canal water does not reach here. Private tanker cartel charges 1000 rupees.",
         "sector": "water",
         "secondary_sector": "health",
         "severity": 5,
         "corroboration_count": 108,
-        "timestamp": "2026-09-24T17:00:00Z"
-    },
-    {
-        "id": "REQ-IN-012",
-        "district_id": "IN-DIST-05",
-        "district_name": "Nuh (Mewat)",
-        "village_or_ward": "Ferozepur Jhirka / Doha",
-        "lat": 27.7900,
-        "lon": 76.9500,
-        "channel": "whatsapp",
-        "original_language": "Hindi",
-        "lang_code": "hi",
-        "raw_content": "कन्या उच्च विद्यालय में 400 छात्राएं हैं लेकिन एक भी चालू शौचालय नहीं है। पानी की पाइपलाइन टूटी है। लड़कियां दोपहर बाद स्कूल छोड़कर घर चली जाती हैं।",
-        "english_translation": "Girls high school has 400 students but not a single functional toilet. Water line broken. Girls leave school after midday to go home.",
-        "sector": "sanitation",
-        "secondary_sector": "water",
-        "severity": 5,
-        "corroboration_count": 81,
-        "timestamp": "2026-09-25T10:15:00Z"
-    },
-
-    # RAMANATHAPURAM (TAMIL NADU) - COASTAL SALINITY & FISHERMEN DEFICIT
-    {
-        "id": "REQ-IN-013",
-        "district_id": "IN-DIST-06",
-        "district_name": "Ramanathapuram",
-        "village_or_ward": "Kadaladi / Sayalgudi Coastal Village",
-        "lat": 9.2000,
-        "lon": 78.4800,
-        "channel": "voice_ivr",
-        "original_language": "Tamil",
-        "lang_code": "ta",
-        "raw_content": "வணக்கம், சாயல்குடி கடலோர கிராமத்தில் கடல்நீர் உட்புகுந்து குடிநீர் கிணறுகள் அனைத்தும் உப்பாகிவிட்டன. கூட்டு குடிநீர் திட்ட குழாய் உடைந்து ஒரு மாதமாக தண்ணீர் வரவில்லை. கடல் சீற்றத்தின் போது மீனவர்கள் செல்ல தார் சாலை இல்லை.",
-        "english_translation": "Greetings, in Sayalgudi coastal village seawater intrusion has salinized all drinking wells. Combined drinking water pipe broke 1 month ago. No paved road during cyclone tidal surges.",
-        "sector": "water",
-        "secondary_sector": "roads",
-        "severity": 5,
-        "corroboration_count": 73,
-        "timestamp": "2026-09-23T06:30:00Z"
-    },
-    {
-        "id": "REQ-IN-014",
-        "district_id": "IN-DIST-06",
-        "district_name": "Ramanathapuram",
-        "village_or_ward": "Tiruvadanai / Thondi Fishery",
-        "lat": 9.7400,
-        "lon": 79.0200,
-        "channel": "whatsapp",
-        "original_language": "Tamil",
-        "lang_code": "ta",
-        "raw_content": "மீன்பிடி துறைமுகத்தில் சோலார் குளிர்சாதன கிடங்கு (Cold Storage) இல்லை. 40 கிலோமீட்டர் சுற்றளவில் டயாலிசிஸ் மையம் இல்லாததால் முதியவர்கள் அவதிப்படுகிறார்கள்.",
-        "english_translation": "No solar cold storage facility at fishing harbour. No dialysis center within 40 km, causing immense suffering for elders.",
-        "sector": "health",
-        "secondary_sector": "power",
-        "severity": 4,
-        "corroboration_count": 48,
-        "timestamp": "2026-09-24T15:20:00Z"
-    },
-
-    # KATIHAR (BIHAR) - FLOOD FLOOD-EROSION & ARSENIC
-    {
-        "id": "REQ-IN-015",
-        "district_id": "IN-DIST-07",
-        "district_name": "Katihar",
-        "village_or_ward": "Amdabad / Mahananda Diara",
-        "lat": 25.3200,
-        "lon": 87.8200,
-        "channel": "voice_ivr",
-        "original_language": "Hindi",
-        "lang_code": "hi",
-        "raw_content": "महानंदा नदी के कटाव से हमारा प्राथमिक विद्यालय और 2 किलोमीटर सड़क नदी में समा गई है। नाव के अलावा कोई साधन नहीं है। बाढ़ के पानी से चापाकल में लाल बदबूदार पानी आ रहा है।",
-        "english_translation": "Mahananda river erosion swallowed our primary school and 2 km road into the river. No transport except boats. Handpumps discharging reddish foul flood water.",
-        "sector": "roads",
-        "secondary_sector": "water",
-        "severity": 5,
-        "corroboration_count": 137,
-        "timestamp": "2026-09-24T05:10:00Z"
+        "timestamp": "2026-09-24T17:00:00Z",
+        "status": "processed",
+        "hashed_id": "hid_p7r9t2v4x6z8b1c3d5f7g9j2k4m6p8r1"
     },
 
     # BRICS: BRAZIL (BAHIA SERTÃO)
     {
         "id": "REQ-BR-001",
         "district_id": "BR-DIST-01",
+        "lgd_district_code": "BR-DIST-01",
         "district_name": "Juazeiro / Sertão",
         "village_or_ward": "Quilombo de Alagagil",
         "lat": -9.4800,
@@ -302,19 +263,23 @@ CITIZEN_REQUESTS: List[Dict[str, Any]] = [
         "channel": "voice_ivr",
         "original_language": "Portuguese",
         "lang_code": "pt",
-        "raw_content": "Olá, meu nome é Maria Silva, CPF 123.456.789-00, telefone (74) 99123-4567. A nossa cisterna comunitária secou há três meses. O posto de saúde está sem energia solar e as vacinas estragaram.",
-        "english_translation": "Hello, my name is Maria Silva, CPF 123.456.789-00, phone (74) 99123-4567. Our community cistern dried up 3 months ago. The health post has no solar power and vaccines got spoiled.",
+        "raw_content": "Olá, meu nome é Maria Silva, CPF 123.456.789-00, telefone (74) 99123-4567. A nossa cisterna comunitária secou há três meses. O posto de saúde está sem energia solar.",
+        "sanitized_content": "Olá, meu nome é [REDACTED_CITIZEN_NAME], CPF [REDACTED_CPF], telefone [REDACTED_PHONE]. A nossa cisterna comunitária secou há três meses. O posto de saúde está sem energia solar.",
+        "english_translation": "Hello, my name is [REDACTED], CPF [REDACTED], phone [REDACTED]. Our community cistern dried up 3 months ago. The health post has no solar power.",
         "sector": "water",
         "secondary_sector": "health",
         "severity": 5,
         "corroboration_count": 59,
-        "timestamp": "2026-09-23T12:00:00Z"
+        "timestamp": "2026-09-23T12:00:00Z",
+        "status": "processed",
+        "hashed_id": "hid_t8v1x3z5b7c9d1f3g5j7k9m2p4r6t8v1"
     },
 
     # BRICS: SOUTH AFRICA (EASTERN CAPE)
     {
         "id": "REQ-ZA-001",
         "district_id": "ZA-DIST-01",
+        "lgd_district_code": "ZA-DIST-01",
         "district_name": "OR Tambo District",
         "village_or_ward": "Mqanduli Rural Ward 4",
         "lat": -31.8100,
@@ -322,12 +287,15 @@ CITIZEN_REQUESTS: List[Dict[str, Any]] = [
         "channel": "voice_ivr",
         "original_language": "isiXhosa",
         "lang_code": "xh",
-        "raw_content": "Igama lam ndinguThabo, ID 8203155123089. Impompo yamanzi kule lali yophukile kwiinyanga ezi-4 ezidlulileyo. Abantwana basela amanzi emfuleni kunye neenkomo. Indlela egravel iyonakele kakhulu.",
-        "english_translation": "My name is Thabo, ID 8203155123089. The communal water pump in this village broke 4 months ago. Children drink river water with livestock. The gravel road is badly washed out.",
+        "raw_content": "Igama lam ndinguThabo, ID 8203155123089. Impompo yamanzi kule lali yophukile kwiinyanga ezi-4 ezidlulileyo. Abantwana basela amanzi emfuleni kunye neenkomo.",
+        "sanitized_content": "Igama lam [REDACTED_CITIZEN_NAME], ID [REDACTED_NATIONAL_ID]. Impompo yamanzi kule lali yophukile kwiinyanga ezi-4 ezidlulileyo. Abantwana basela amanzi emfuleni kunye neenkomo.",
+        "english_translation": "My name is [REDACTED], ID [REDACTED]. The communal water pump in this village broke 4 months ago. Children drink river water with livestock.",
         "sector": "water",
         "secondary_sector": "roads",
         "severity": 5,
         "corroboration_count": 84,
-        "timestamp": "2026-09-24T14:10:00Z"
+        "timestamp": "2026-09-24T14:10:00Z",
+        "status": "processed",
+        "hashed_id": "hid_x9z2b4c6d8f1g3j5k7m9p1r3t5v7x9z2"
     }
 ]

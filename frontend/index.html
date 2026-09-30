@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JANA-GATISHAKTI | Sovereign Citizen-Driven DPI Platform</title>
+  <title>JANA-GATISHAKTI | Sovereign Citizen-Driven DPI Platform (Maharashtra Pilot)</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -31,21 +31,32 @@
               DPGA 9/9 DPG
             </span>
             <span class="hidden sm:inline text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-              BRICS Track 1: Innovation
+              Maharashtra Pilot (LGD 27)
             </span>
           </div>
           <p class="text-xs text-slate-400">
-            Citizen-Powered Digital Public Infrastructure for Multilingual Feedback & Capital Project Formulation
+            Citizen-Powered Digital Public Infrastructure for Vernacular Feedback & Capital Project Formulation
           </p>
         </div>
       </div>
 
-      <!-- Controls & Sovereign Switcher -->
-      <div class="flex items-center gap-3">
-        <div class="flex items-center gap-2 bg-slate-800/80 p-1 rounded-lg border border-slate-700 text-xs">
-          <span class="text-slate-400 pl-2">Sovereign Focus:</span>
+      <!-- Controls, Role Switcher & Sovereign Focus -->
+      <div class="flex items-center gap-2.5 flex-wrap">
+        <!-- RBAC / ABAC Role Switcher -->
+        <div class="flex items-center gap-1.5 bg-slate-800/80 p-1 rounded-lg border border-slate-700 text-xs">
+          <span class="text-slate-400 pl-1.5 font-medium">Role:</span>
+          <select id="user-role-select" class="bg-slate-900 text-cyan-300 font-bold px-2 py-1 rounded border border-slate-700 focus:outline-none focus:border-cyan-500">
+            <option value="citizen">👤 Citizen Edge</option>
+            <option value="reporting_officer">👮 RO (Gadchiroli Scope)</option>
+            <option value="admin">🏛️ State Admin (4-Eyes MFA)</option>
+          </select>
+        </div>
+
+        <!-- Sovereign Focus Selector -->
+        <div class="flex items-center gap-1.5 bg-slate-800/80 p-1 rounded-lg border border-slate-700 text-xs">
+          <span class="text-slate-400 pl-1.5 font-medium">Focus:</span>
           <select id="country-filter" class="bg-slate-900 text-slate-200 font-semibold px-2 py-1 rounded border border-slate-700 focus:outline-none focus:border-cyan-500">
-            <option value="IN">🇮🇳 India (Aspirational Districts)</option>
+            <option value="IN">🇮🇳 Maharashtra Pilot (LGD)</option>
             <option value="BR">🇧🇷 Brazil (Sertão / Bahia)</option>
             <option value="ZA">🇿🇦 South Africa (Eastern Cape)</option>
             <option value="all">🌐 All BRICS Partners</option>
@@ -53,48 +64,83 @@
         </div>
 
         <a href="/presentation" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-cyan-600/30 to-indigo-600/30 hover:from-cyan-600/50 hover:to-indigo-600/50 text-cyan-200 border border-cyan-500/40 rounded-lg text-xs font-bold transition">
-          <span>📖 Pitch Deck & Architecture</span>
+          <span>📖 Architecture Deck</span>
         </a>
-        <a href="/api/dpg/ocds" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg text-xs font-medium transition">
-          <span>📑 OCDS Export</span>
+        <a href="/v1/opendata/ocds" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg text-xs font-medium transition">
+          <span>📑 OCDS 1.1</span>
         </a>
         <a href="/docs" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-300 border border-cyan-500/40 rounded-lg text-xs font-medium transition">
-          <span>⚡ API Docs</span>
+          <span>⚡ Swagger Docs</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- KEY METRICS BANNER -->
+  <!-- KEY METRICS & AUDIT INTEGRITY BANNER -->
   <section class="border-b border-slate-800/60 bg-slate-900/40 py-2.5">
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
-      <div class="flex items-center gap-3 glass-panel p-2.5 rounded-lg border border-slate-800">
-        <div class="text-2xl">📍</div>
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-5 gap-3 text-xs">
+      <div class="flex items-center gap-2.5 glass-panel p-2 rounded-lg border border-slate-800">
+        <div class="text-xl">📍</div>
         <div>
-          <div class="text-slate-400 font-medium">Discovered Demand Hotspots</div>
-          <div id="stat-total-hotspots" class="text-base font-extrabold text-slate-100 font-mono">17</div>
+          <div class="text-slate-400 font-medium">Spatio-Temporal Clusters</div>
+          <div id="stat-total-hotspots" class="text-sm font-extrabold text-slate-100 font-mono">17</div>
         </div>
       </div>
-      <div class="flex items-center gap-3 glass-panel p-2.5 rounded-lg border border-slate-800">
-        <div class="text-2xl">🚨</div>
+      <div class="flex items-center gap-2.5 glass-panel p-2 rounded-lg border border-slate-800">
+        <div class="text-xl">🚨</div>
         <div>
-          <div class="text-slate-400 font-medium">Critical Urgency Hotspots</div>
-          <div id="stat-critical-hotspots" class="text-base font-extrabold text-red-400 font-mono">8</div>
+          <div class="text-slate-400 font-medium">Critical Hotspots (DDDI &gt; 75)</div>
+          <div id="stat-critical-hotspots" class="text-sm font-extrabold text-red-400 font-mono">8</div>
         </div>
       </div>
-      <div class="flex items-center gap-3 glass-panel p-2.5 rounded-lg border border-slate-800">
-        <div class="text-2xl">👥</div>
+      <div class="flex items-center gap-2.5 glass-panel p-2 rounded-lg border border-slate-800">
+        <div class="text-xl">👥</div>
         <div>
-          <div class="text-slate-400 font-medium">Marginalized Citizens Impacted</div>
-          <div id="stat-beneficiaries" class="text-base font-extrabold text-emerald-400 font-mono">14.8 Lakh</div>
+          <div class="text-slate-400 font-medium">Target Beneficiaries</div>
+          <div id="stat-beneficiaries" class="text-sm font-extrabold text-emerald-400 font-mono">14.8 Lakh</div>
         </div>
       </div>
-      <div class="flex items-center gap-3 glass-panel p-2.5 rounded-lg border border-slate-800">
-        <div class="text-2xl">💰</div>
+      <div class="flex items-center gap-2.5 glass-panel p-2 rounded-lg border border-slate-800">
+        <div class="text-xl">💰</div>
         <div>
           <div class="text-slate-400 font-medium">Prioritized Capex Pipeline</div>
-          <div id="stat-total-capex" class="text-base font-extrabold text-amber-400 font-mono">₹ 420 Cr</div>
+          <div id="stat-total-capex" class="text-sm font-extrabold text-amber-400 font-mono">₹ 420 Cr</div>
         </div>
+      </div>
+      <div class="col-span-2 md:col-span-1 flex items-center gap-2.5 glass-panel p-2 rounded-lg border border-emerald-500/30 bg-emerald-950/20">
+        <div class="text-xl">🛡️</div>
+        <div>
+          <div class="text-slate-400 font-medium">Audit Ledger Integrity</div>
+          <div id="stat-audit-status" class="text-xs font-extrabold text-emerald-400 font-mono flex items-center gap-1">
+            <span>CHAIN VERIFIED ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTING OFFICER (RO) DISTRICT CASEWORK BANNER (Visible in RO Mode) -->
+  <section id="ro-casework-section" class="bg-indigo-950/40 border-b border-indigo-500/40 py-3 hidden">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-3 text-xs">
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 rounded bg-indigo-500/30 text-indigo-300 font-bold border border-indigo-400/40">RO INBOX</span>
+        <span class="text-slate-200">Logged in as <strong>Officer Etapalli (ro:etapalli-01)</strong> | Jurisdiction: <strong>Gadchiroli (LGD 990001)</strong></span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-slate-400">Filter Status:</span>
+        <select id="ro-filter-status" onchange="loadROInbox()" class="bg-slate-900 border border-slate-700 text-slate-200 px-2 py-0.5 rounded">
+          <option value="needs_review">Needs Field Review</option>
+          <option value="processed">Processed</option>
+          <option value="verified">Verified</option>
+          <option value="all">All Reports</option>
+        </select>
+        <button onclick="loadROInbox()" class="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded font-medium">Refresh Inbox</button>
+      </div>
+    </div>
+    <!-- RO Inbox Cards Container -->
+    <div class="max-w-7xl mx-auto px-4 pt-3">
+      <div id="ro-inbox-cards" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <!-- Populated via JS -->
       </div>
     </div>
   </section>
@@ -111,7 +157,7 @@
         <div class="p-3 border-b border-slate-800/80 bg-slate-900/80 flex flex-wrap items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <span class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-              <span>🗺️</span> Sovereign Geospatial Hotspot Grid
+              <span>🗺️</span> Sovereign Geospatial Hotspot Grid (H3 &amp; LGD)
             </span>
           </div>
 
@@ -132,25 +178,25 @@
 
         <div class="p-2.5 bg-slate-900/90 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span> Critical Need</span>
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span> High Disparity</span>
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400 inline-block"></span> Corroborated Hotspot</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span> Critical Need (DDDI &gt; 78)</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span> High Need</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400 inline-block"></span> Corroborated H3 Cluster</span>
           </div>
-          <span class="italic text-[11px]">Click any circular hotspot to formulate project memo</span>
+          <span class="italic text-[11px]">Survey of India / LGD Authoritative Boundaries</span>
         </div>
       </div>
 
-      <!-- INTERACTIVE POLICY & CAPEX WHAT-IF SIMULATOR -->
+      <!-- MILP PORTFOLIO OPTIMIZER & POLICY WHAT-IF SIMULATOR -->
       <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-4">
         <div class="flex items-center justify-between border-b border-slate-800 pb-2">
           <div>
             <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
-              <span>📊</span> Capex Allocation & What-If Policy Simulator
+              <span>📊</span> MILP Capital Budget Optimizer (Section 7)
             </h3>
-            <p class="text-xs text-slate-400">Simulate capital deployment against real citizen demand hotspots</p>
+            <p class="text-xs text-slate-400">Deterministic welfare maximization with Aspirational &amp; SC/ST equity constraints</p>
           </div>
-          <button onclick="runBudgetSimulation()" class="px-3 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg text-xs font-bold transition shadow-lg shadow-cyan-600/30">
-            Recompute Impact Forecast
+          <button onclick="runMILPOptimizer()" class="px-3.5 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg text-xs font-bold transition shadow-lg shadow-cyan-600/30">
+            Solve MILP Portfolio
           </button>
         </div>
 
@@ -159,81 +205,62 @@
           <div class="space-y-3 text-xs bg-slate-900/50 p-3.5 rounded-xl border border-slate-800/80">
             <div>
               <div class="flex justify-between text-slate-300 font-semibold mb-1">
-                <span>Total District / Scheme Budget:</span>
+                <span>Total Capital Budget Envelope:</span>
                 <span class="text-amber-400 font-mono font-bold">₹ <span id="budget-disp">120</span> Cr</span>
               </div>
               <input type="range" id="sim-total-budget" min="30" max="300" step="10" value="120" oninput="document.getElementById('budget-disp').innerText = this.value" class="w-full accent-cyan-500">
             </div>
 
-            <!-- Sector Sliders -->
+            <!-- Equity Sliders -->
             <div class="space-y-2 pt-2">
               <div class="flex justify-between items-center text-slate-300">
-                <span>💧 Water Infrastructure (JJM):</span>
-                <span id="val-water" class="font-mono text-cyan-400 font-bold">30%</span>
+                <span>🎯 Aspirational District Floor (α):</span>
+                <span id="val-asp-floor" class="font-mono text-cyan-400 font-bold">40%</span>
               </div>
-              <input type="range" id="slider-water" min="0" max="60" value="30" class="w-full accent-cyan-400">
+              <input type="range" id="slider-asp-floor" min="10" max="80" step="5" value="40" oninput="document.getElementById('val-asp-floor').innerText = this.value + '%'" class="w-full accent-cyan-400">
 
               <div class="flex justify-between items-center text-slate-300">
-                <span>🛣️ All-Weather Roads (PMGSY):</span>
-                <span id="val-roads" class="font-mono text-orange-400 font-bold">25%</span>
+                <span>👥 SC/ST Beneficiary Target (β):</span>
+                <span id="val-scst-floor" class="font-mono text-emerald-400 font-bold">30%</span>
               </div>
-              <input type="range" id="slider-roads" min="0" max="60" value="25" class="w-full accent-orange-400">
+              <input type="range" id="slider-scst-floor" min="10" max="70" step="5" value="30" oninput="document.getElementById('val-scst-floor').innerText = this.value + '%'" class="w-full accent-emerald-400">
 
               <div class="flex justify-between items-center text-slate-300">
-                <span>⚡ Agri Feeder & Solar (PM-KUSUM):</span>
-                <span id="val-power" class="font-mono text-amber-400 font-bold">15%</span>
+                <span>⚖️ Max Sector Diversity Cap (γ):</span>
+                <span id="val-sector-cap" class="font-mono text-purple-400 font-bold">35%</span>
               </div>
-              <input type="range" id="slider-power" min="0" max="60" value="15" class="w-full accent-amber-400">
-
-              <div class="flex justify-between items-center text-slate-300">
-                <span>🏥 Health Centres (Ayushman Mandir):</span>
-                <span id="val-health" class="font-mono text-red-400 font-bold">15%</span>
-              </div>
-              <input type="range" id="slider-health" min="0" max="60" value="15" class="w-full accent-red-400">
-
-              <div class="flex justify-between items-center text-slate-300">
-                <span>📶 Fiber & 4G (BharatNet):</span>
-                <span id="val-telecom" class="font-mono text-purple-400 font-bold">10%</span>
-              </div>
-              <input type="range" id="slider-telecom" min="0" max="40" value="10" class="w-full accent-purple-400">
-
-              <div class="flex justify-between items-center text-slate-300">
-                <span>🚽 Sanitation & Drainage (SBM-G):</span>
-                <span id="val-sanitation" class="font-mono text-emerald-400 font-bold">5%</span>
-              </div>
-              <input type="range" id="slider-sanitation" min="0" max="40" value="5" class="w-full accent-emerald-400">
+              <input type="range" id="slider-sector-cap" min="20" max="60" step="5" value="35" oninput="document.getElementById('val-sector-cap').innerText = this.value + '%'" class="w-full accent-purple-400">
             </div>
           </div>
 
-          <!-- Forecast Result Dashboard -->
+          <!-- MILP Forecast Result Dashboard -->
           <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex flex-col justify-between space-y-3 text-xs">
-            <span class="text-slate-400 font-bold uppercase tracking-wider text-[11px]">Algorithmic Impact Projection</span>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-400 font-bold uppercase tracking-wider text-[11px]">Optimization Output</span>
+              <span id="opt-solver-badge" class="px-2 py-0.5 rounded text-[10px] bg-cyan-950 text-cyan-300 border border-cyan-800 font-mono">PuLP-CBC</span>
+            </div>
 
-            <div class="space-y-3">
+            <div class="space-y-2.5">
               <div class="flex items-center justify-between p-2 rounded bg-slate-800/60">
-                <span class="text-slate-300">Hotspots Fully Resolved:</span>
+                <span class="text-slate-300">Selected Projects:</span>
                 <span id="sim-res-hotspots" class="font-bold text-cyan-400 text-sm font-mono">11 / 17</span>
               </div>
               <div class="flex items-center justify-between p-2 rounded bg-slate-800/60">
-                <span class="text-slate-300">Resolution Clearance Rate:</span>
-                <span id="sim-res-rate" class="font-bold text-emerald-400 text-sm font-mono">64.7%</span>
+                <span class="text-slate-300">Allocated Capex:</span>
+                <span id="sim-res-capex" class="font-bold text-amber-400 text-sm font-mono">₹ 96.95 Cr</span>
               </div>
               <div class="flex items-center justify-between p-2 rounded bg-slate-800/60">
-                <span class="text-slate-300">Citizens Directly Reached:</span>
-                <span id="sim-res-beneficiaries" class="font-bold text-slate-100 text-sm font-mono">9,84,000</span>
+                <span class="text-slate-300">Aspirational Share Achieved:</span>
+                <span id="sim-res-rate" class="font-bold text-emerald-400 text-sm font-mono">100.0%</span>
               </div>
               <div class="flex items-center justify-between p-2 rounded bg-slate-800/60">
-                <span class="text-slate-300">Regional Deficit Reduction:</span>
-                <span id="sim-res-deficit-drop" class="font-bold text-emerald-400 text-sm font-mono">-27.2%</span>
-              </div>
-              <div class="flex items-center justify-between p-2 rounded bg-slate-800/60">
-                <span class="text-slate-300">Citizen Trust & Satisfaction Surge:</span>
-                <span id="sim-res-satisfaction" class="font-bold text-cyan-300 text-sm font-mono">+42.1%</span>
+                <span class="text-slate-300">Binding Constraint:</span>
+                <span id="sim-res-binding" class="font-bold text-slate-200 text-xs font-mono">Total Budget Cap</span>
               </div>
             </div>
 
             <p class="text-[11px] text-slate-400 italic pt-1">
-              Simulation optimizes for Multi-Criteria Decision Analysis (MCDA) vulnerability weighting.
+              Deterministic MILP welfare maximization. Zero LLM hallucinations in allocation.
             </p>
           </div>
         </div>
@@ -244,7 +271,7 @@
         <div class="flex items-center justify-between border-b border-slate-800 pb-2">
           <div>
             <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
-              <span>🔍</span> Jan-Praman: Citizen Verification & Ghost Asset Sentinel
+              <span>🔍</span> Jan-Praman: Citizen Verification &amp; Ghost Asset Sentinel
             </h3>
             <p class="text-xs text-slate-400">Automated post-completion voice calls cross-verifying contractor billing vs ground truth</p>
           </div>
@@ -268,12 +295,12 @@
         <div class="flex items-center justify-between border-b border-slate-800 pb-2">
           <div>
             <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
-              <span>🎙️</span> Bhasha-Setu: Multilingual Voice & Chat Terminal
+              <span>🎙️</span> Bhasha-Setu: Multilingual Voice &amp; Chat Terminal
             </h3>
-            <p class="text-xs text-slate-400">Submit development requests via Vernacular Speech or WhatsApp</p>
+            <p class="text-xs text-slate-400">Submit requests via Marathi, Hindi, or English (DPDP Compliant)</p>
           </div>
-          <span class="text-[10px] font-mono text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">
-            DPG Non-PII Active
+          <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">
+            Verhoeff PII Active
           </span>
         </div>
 
@@ -282,7 +309,7 @@
           <span class="text-[11px] font-semibold text-slate-400 block">Quick Citizen Scenarios (1-Click Test):</span>
           <div class="flex flex-wrap gap-1.5 text-xs">
             <button onclick="loadPresetScenario('vidarbha')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
-              🌾 Vidarbha Water & Health (Marathi)
+              🌾 Vidarbha Water &amp; Health (Marathi)
             </button>
             <button onclick="loadPresetScenario('bastar')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
               🌲 Bastar Tribal Road (Hindi)
@@ -290,23 +317,20 @@
             <button onclick="loadPresetScenario('bundelkhand')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
               ☀️ Bundelkhand Dry Pipeline (Hindi)
             </button>
-            <button onclick="loadPresetScenario('raichur')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
-              ☣️ Raichur Fluoride Water (Kannada)
+            <button onclick="loadPresetScenario('nandurbar')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
+              ⛰️ Nandurbar Satpura Water (Marathi)
             </button>
-            <button onclick="loadPresetScenario('nuh')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
-              🏫 Nuh Girls School Toilets (Hindi)
-            </button>
-            <button onclick="loadPresetScenario('brazil')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
-              🇧🇷 Bahia Cisterna (Portuguese)
+            <button onclick="loadPresetScenario('washim')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
+              ⚡ Washim Feeder Outage (Marathi)
             </button>
           </div>
         </div>
 
-        <!-- Target District Selector -->
+        <!-- Target District Selector (Canonical LGD) -->
         <div class="text-xs space-y-1">
-          <label class="text-slate-300 font-semibold">Reporting Location (Gram Panchayat / District):</label>
+          <label class="text-slate-300 font-semibold">Reporting Jurisdiction (LGD District):</label>
           <select id="district-select" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-slate-200 focus:outline-none focus:border-cyan-500 font-medium">
-            <!-- Dynamically populated -->
+            <!-- Dynamically populated with LGD codes -->
           </select>
         </div>
 
@@ -323,7 +347,7 @@
               <span class="wave-bar"></span>
             </div>
           </div>
-          <textarea id="citizen-voice-input" rows="3" placeholder="Speak in any Indian vernacular or type citizen feedback (Aadhaar/Phone will be automatically scrubbed)..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500"></textarea>
+          <textarea id="citizen-voice-input" rows="3" placeholder="Speak in Marathi, Hindi, English, or type feedback (Aadhaar & phone automatically scrubbed via Verhoeff)..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500"></textarea>
         </div>
 
         <div class="flex items-center justify-between gap-3 text-xs">
@@ -336,8 +360,8 @@
             <button id="mic-record-btn" onclick="toggleMicrophone()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg font-bold transition flex items-center gap-1.5">
               🎙️ Speak in Vernacular
             </button>
-            <button onclick="submitCitizenFeedback()" class="px-4 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-bold shadow-lg shadow-cyan-600/30 transition">
-              Ingest & Cluster →
+            <button onclick="openConsentModalBeforeSubmit()" class="px-4 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-bold shadow-lg shadow-cyan-600/30 transition">
+              Ingest &amp; Cluster →
             </button>
           </div>
         </div>
@@ -351,7 +375,7 @@
         <div class="flex items-center justify-between border-b border-slate-800 pb-2">
           <div>
             <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
-              <span>🏛️</span> Nivesh-Drishti: Prioritized Capital Project Pipeline
+              <span>🏛️</span> Nivesh-Drishti: Capital Project Pipeline
             </h3>
             <p class="text-xs text-slate-400">Algorithmic project dossiers synthesized from verified citizen voice demand</p>
           </div>
@@ -368,27 +392,50 @@
 
   </main>
 
-  <!-- DIGITAL PUBLIC GOOD (DPGA) COMPLIANCE FOOTER -->
-  <footer class="border-t border-slate-800 bg-slate-900/90 py-4 text-xs text-slate-400 mt-6">
-    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center gap-4">
-        <span class="font-bold text-slate-300">JANA-GATISHAKTI DPI</span>
-        <span>•</span>
-        <span>Apache 2.0 Open Source</span>
-        <span>•</span>
-        <span>Complies with DPGA 9 Indicators</span>
-        <span>•</span>
-        <span>India DPDP Act & LGPD Aligned</span>
+  <!-- DPDP ACT 2023 CONSENT MODAL (Section 9.4) -->
+  <div id="consent-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="glass-panel p-6 rounded-2xl max-w-xl w-full border border-cyan-500/40 shadow-2xl relative space-y-4 text-xs">
+      <div class="border-b border-slate-700 pb-2 flex items-center justify-between">
+        <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+          <span>🛡️</span> Data Principal Consent (DPDP Act 2023)
+        </h3>
+        <button onclick="closeConsentModal()" class="text-slate-400 hover:text-white font-bold text-base">✕</button>
       </div>
-      <div class="flex items-center gap-3">
-        <a href="/api/dpg/geojson" target="_blank" class="hover:text-cyan-400 transition font-mono">GeoJSON Endpoint</a>
-        <span>•</span>
-        <a href="/api/dpg/ocds" target="_blank" class="hover:text-cyan-400 transition font-mono">Open Contracting (OCDS)</a>
-        <span>•</span>
-        <a href="/api/dpg/compliance" target="_blank" class="hover:text-cyan-400 transition font-mono">DPG Audit Report</a>
+
+      <div class="space-y-2 text-slate-300 bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 leading-relaxed">
+        <div class="flex items-center justify-between text-[11px] text-cyan-400 pb-1">
+          <span>मराठी (Marathi) / हिन्दी / English</span>
+          <button onclick="playConsentAudioPrompt()" class="underline hover:text-cyan-300">🔊 Read Aloud</button>
+        </div>
+        <p><strong>जन-गतिशक्ती: तुमची संमती</strong></p>
+        <p>तुमच्या गावाच्या गरजा समजून घेण्यासाठी आणि सार्वजनिक कामांचे नियोजन करण्यासाठी आम्ही तुमचा आवाज किंवा संदेश नोंदवू.</p>
+        <ul class="list-disc pl-4 space-y-1 text-slate-400">
+          <li>आम्ही तुमचे नाव, आधार किंवा संपर्क यादी घेत नाही. वैयक्तिक माहिती आपोआप काढून टाकली जाते.</li>
+          <li>तुमचा मोबाइल क्रमांक गुप्त कोड (HMAC-SHA256) मध्ये बदलला जातो; अधिकारी तो कधीही पाहत नाहीत.</li>
+          <li>आवाजाची नोंद ३० दिवसांत हटवली जाते; ओळख-रहित संदेश योजना कमाल ३ वर्षे ठेवला जातो.</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-end gap-2.5 pt-2">
+        <button onclick="confirmConsentAndSubmit(false)" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg font-medium">
+          [I Agree / सहमत आहे]
+        </button>
+        <button onclick="confirmConsentAndSubmit(true)" class="px-4 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-bold shadow-lg shadow-cyan-600/30">
+          [Agree + Share GPS / संमती + स्थान]
+        </button>
       </div>
     </div>
-  </footer>
+  </div>
+
+  <!-- EXPLAINABILITY WATERFALL DRAWER / MODAL (Section 7.5) -->
+  <div id="explain-drawer-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="glass-panel p-6 rounded-2xl max-w-2xl w-full border border-indigo-500/40 shadow-2xl relative space-y-4">
+      <button onclick="closeExplainModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 font-bold text-lg">✕</button>
+      <div id="explain-drawer-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
 
   <!-- FULL PROJECT DOSSIER MODAL -->
   <div id="dossier-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
@@ -399,6 +446,28 @@
       </div>
     </div>
   </div>
+
+  <!-- DIGITAL PUBLIC GOOD (DPGA) COMPLIANCE FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-900/90 py-4 text-xs text-slate-400 mt-6">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <span class="font-bold text-slate-300">JANA-GATISHAKTI DPI</span>
+        <span>•</span>
+        <span>Apache 2.0 Open Source</span>
+        <span>•</span>
+        <span>Complies with DPGA 9 Indicators</span>
+        <span>•</span>
+        <span>DPDP Act 2023 &amp; LGPD Aligned</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/v1/opendata/geojson" target="_blank" class="hover:text-cyan-400 transition font-mono">GeoJSON Endpoint</a>
+        <span>•</span>
+        <a href="/v1/opendata/ocds" target="_blank" class="hover:text-cyan-400 transition font-mono">Open Contracting (OCDS)</a>
+        <span>•</span>
+        <a href="/v1/audit/verify" target="_blank" class="hover:text-cyan-400 transition font-mono">Verify Audit Chain</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- Main JavaScript File -->
   <script src="/static/app.js"></script>
