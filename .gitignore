@@ -65,3 +65,5 @@ tmp/
 # Office temp lock files
 ~$*
 
+cloudflared.exe
+
