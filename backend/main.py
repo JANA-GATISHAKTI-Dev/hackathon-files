@@ -354,6 +354,14 @@ async def serve_submission():
         return FileResponse(sub_file)
     return {"message": "submission.html not found"}
 
+@app.get("/video")
+@app.get("/demo-video")
+async def serve_demo_video():
+    vid_file = os.path.join(frontend_path, "demo_video.html")
+    if os.path.exists(vid_file):
+        return FileResponse(vid_file)
+    return {"message": "demo_video.html not found"}
+
 @app.get("/download/deck")
 async def download_deck():
     deck_path = os.path.join(frontend_path, "static", "JANA_GATISHAKTI_Executive_Presentation_Deck.pptx")
@@ -364,5 +372,6 @@ async def download_deck():
             media_type="application/vnd.openxmlformats-officedocument.presentationml.presentation"
         )
     return {"message": "PowerPoint deck not found"}
+
 
 
