@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JANA-GATISHAKTI | Sovereign Citizen-Driven DPI Platform (Maharashtra Pilot)</title>
+  <title>JANA-GATISHAKTI | Sovereign Citizen-Driven DPI Platform</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,10 +16,12 @@
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-slate-900">
 
   <!-- TOP SOVEREIGN DPI NAVIGATION HEADER -->
-  <header class="border-b border-slate-800/80 bg-slate-900/90 backdrop-blur-md sticky top-0 z-50">
+  <header class="border-b border-slate-800/80 bg-slate-900/95 backdrop-blur-md sticky top-0 z-50 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+      
+      <!-- Brand & Badges -->
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 font-black text-xl">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 font-black text-xl">
           ⚡
         </div>
         <div>
@@ -35,25 +37,25 @@
             </span>
           </div>
           <p class="text-xs text-slate-400">
-            Citizen-Powered Digital Public Infrastructure for Vernacular Feedback & Capital Project Formulation
+            Citizen-Powered Digital Public Infrastructure for Vernacular Feedback &amp; Capital Project Formulation
           </p>
         </div>
       </div>
 
-      <!-- Controls, Role Switcher & Sovereign Focus -->
+      <!-- Controls & Persona Switcher -->
       <div class="flex items-center gap-2.5 flex-wrap">
         <!-- RBAC / ABAC Role Switcher -->
-        <div class="flex items-center gap-1.5 bg-slate-800/80 p-1 rounded-lg border border-slate-700 text-xs">
-          <span class="text-slate-400 pl-1.5 font-medium">Role:</span>
+        <div class="flex items-center gap-1.5 bg-slate-800/90 p-1 rounded-lg border border-slate-700 text-xs">
+          <span class="text-slate-400 pl-1.5 font-medium">Persona:</span>
           <select id="user-role-select" class="bg-slate-900 text-cyan-300 font-bold px-2 py-1 rounded border border-slate-700 focus:outline-none focus:border-cyan-500">
             <option value="citizen">👤 Citizen Edge</option>
-            <option value="reporting_officer">👮 RO (Gadchiroli Scope)</option>
-            <option value="admin">🏛️ State Admin (4-Eyes MFA)</option>
+            <option value="reporting_officer">👮 Reporting Officer (Gadchiroli Scope)</option>
+            <option value="admin">🏛️ State Admin (4-Eyes Governance)</option>
           </select>
         </div>
 
         <!-- Sovereign Focus Selector -->
-        <div class="flex items-center gap-1.5 bg-slate-800/80 p-1 rounded-lg border border-slate-700 text-xs">
+        <div class="flex items-center gap-1.5 bg-slate-800/90 p-1 rounded-lg border border-slate-700 text-xs">
           <span class="text-slate-400 pl-1.5 font-medium">Focus:</span>
           <select id="country-filter" class="bg-slate-900 text-slate-200 font-semibold px-2 py-1 rounded border border-slate-700 focus:outline-none focus:border-cyan-500">
             <option value="IN">🇮🇳 Maharashtra Pilot (LGD)</option>
@@ -64,70 +66,56 @@
         </div>
 
         <a href="/presentation" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-cyan-600/30 to-indigo-600/30 hover:from-cyan-600/50 hover:to-indigo-600/50 text-cyan-200 border border-cyan-500/40 rounded-lg text-xs font-bold transition">
-          <span>📖 Architecture Deck</span>
+          <span>📖 Pitch Deck</span>
         </a>
         <a href="/v1/opendata/ocds" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg text-xs font-medium transition">
           <span>📑 OCDS 1.1</span>
-        </a>
-        <a href="/docs" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-300 border border-cyan-500/40 rounded-lg text-xs font-medium transition">
-          <span>⚡ Swagger Docs</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- KEY METRICS & AUDIT INTEGRITY BANNER -->
-  <section class="border-b border-slate-800/60 bg-slate-900/40 py-2.5">
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-5 gap-3 text-xs">
-      <div class="flex items-center gap-2.5 glass-panel p-2 rounded-lg border border-slate-800">
-        <div class="text-xl">📍</div>
-        <div>
-          <div class="text-slate-400 font-medium">Spatio-Temporal Clusters</div>
-          <div id="stat-total-hotspots" class="text-sm font-extrabold text-slate-100 font-mono">17</div>
-        </div>
+  <!-- NAVIGATION TABS BAR (Superior, User-Friendly Segmented Controller) -->
+  <nav class="border-b border-slate-800 bg-slate-900/60 sticky top-[65px] z-40 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-x-auto">
+      <div class="flex items-center gap-2 py-2">
+        <button onclick="switchTab('map-tab')" id="btn-map-tab" class="tab-btn active px-4 py-2 rounded-xl text-xs font-semibold border border-transparent transition flex items-center gap-2">
+          <span>🗺️</span> GIS Command Cockpit
+        </button>
+        <button onclick="switchTab('kiosk-tab')" id="btn-kiosk-tab" class="tab-btn px-4 py-2 rounded-xl text-xs font-semibold border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition flex items-center gap-2">
+          <span>🎙️</span> Citizen Voice &amp; WhatsApp Kiosk
+        </button>
+        <button onclick="switchTab('projects-tab')" id="btn-projects-tab" class="tab-btn px-4 py-2 rounded-xl text-xs font-semibold border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition flex items-center gap-2">
+          <span>🏛️</span> Capital Project Pipeline
+        </button>
+        <button onclick="switchTab('simulator-tab')" id="btn-simulator-tab" class="tab-btn px-4 py-2 rounded-xl text-xs font-semibold border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition flex items-center gap-2">
+          <span>📊</span> MILP Policy Optimizer
+        </button>
+        <button onclick="switchTab('audit-tab')" id="btn-audit-tab" class="tab-btn px-4 py-2 rounded-xl text-xs font-semibold border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition flex items-center gap-2">
+          <span>🔍</span> Jan-Praman &amp; Audit Sentinel
+        </button>
       </div>
-      <div class="flex items-center gap-2.5 glass-panel p-2 rounded-lg border border-slate-800">
-        <div class="text-xl">🚨</div>
-        <div>
-          <div class="text-slate-400 font-medium">Critical Hotspots (DDDI &gt; 75)</div>
-          <div id="stat-critical-hotspots" class="text-sm font-extrabold text-red-400 font-mono">8</div>
-        </div>
-      </div>
-      <div class="flex items-center gap-2.5 glass-panel p-2 rounded-lg border border-slate-800">
-        <div class="text-xl">👥</div>
-        <div>
-          <div class="text-slate-400 font-medium">Target Beneficiaries</div>
-          <div id="stat-beneficiaries" class="text-sm font-extrabold text-emerald-400 font-mono">14.8 Lakh</div>
-        </div>
-      </div>
-      <div class="flex items-center gap-2.5 glass-panel p-2 rounded-lg border border-slate-800">
-        <div class="text-xl">💰</div>
-        <div>
-          <div class="text-slate-400 font-medium">Prioritized Capex Pipeline</div>
-          <div id="stat-total-capex" class="text-sm font-extrabold text-amber-400 font-mono">₹ 420 Cr</div>
-        </div>
-      </div>
-      <div class="col-span-2 md:col-span-1 flex items-center gap-2.5 glass-panel p-2 rounded-lg border border-emerald-500/30 bg-emerald-950/20">
-        <div class="text-xl">🛡️</div>
-        <div>
-          <div class="text-slate-400 font-medium">Audit Ledger Integrity</div>
-          <div id="stat-audit-status" class="text-xs font-extrabold text-emerald-400 font-mono flex items-center gap-1">
-            <span>CHAIN VERIFIED ✓</span>
-          </div>
-        </div>
+
+      <!-- Live KPI Badges -->
+      <div class="hidden lg:flex items-center gap-3 text-xs pr-2">
+        <span class="text-slate-400">Hotspots: <strong id="kpi-hotspots" class="text-cyan-400 font-mono">12</strong></span>
+        <span>•</span>
+        <span class="text-slate-400">Beneficiaries: <strong id="kpi-beneficiaries" class="text-emerald-400 font-mono">14.8L</strong></span>
+        <span>•</span>
+        <span class="text-slate-400">Capex: <strong id="kpi-capex" class="text-amber-400 font-mono">₹ 420 Cr</strong></span>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <!-- REPORTING OFFICER (RO) DISTRICT CASEWORK BANNER (Visible in RO Mode) -->
-  <section id="ro-casework-section" class="bg-indigo-950/40 border-b border-indigo-500/40 py-3 hidden">
+  <!-- REPORTING OFFICER (RO) JURISDICTION BANNER (Visible in RO Mode) -->
+  <section id="ro-casework-section" class="bg-indigo-950/40 border-b border-indigo-500/40 py-2.5 hidden">
     <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-3 text-xs">
       <div class="flex items-center gap-2">
         <span class="px-2 py-0.5 rounded bg-indigo-500/30 text-indigo-300 font-bold border border-indigo-400/40">RO INBOX</span>
         <span class="text-slate-200">Logged in as <strong>Officer Etapalli (ro:etapalli-01)</strong> | Jurisdiction: <strong>Gadchiroli (LGD 990001)</strong></span>
       </div>
       <div class="flex items-center gap-2">
-        <span class="text-slate-400">Filter Status:</span>
+        <span class="text-slate-400">Status:</span>
         <select id="ro-filter-status" onchange="loadROInbox()" class="bg-slate-900 border border-slate-700 text-slate-200 px-2 py-0.5 rounded">
           <option value="needs_review">Needs Field Review</option>
           <option value="processed">Processed</option>
@@ -137,257 +125,435 @@
         <button onclick="loadROInbox()" class="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded font-medium">Refresh Inbox</button>
       </div>
     </div>
-    <!-- RO Inbox Cards Container -->
-    <div class="max-w-7xl mx-auto px-4 pt-3">
-      <div id="ro-inbox-cards" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+    <div class="max-w-7xl mx-auto px-4 pt-2 pb-1">
+      <div id="ro-inbox-cards" class="grid grid-cols-1 md:grid-cols-3 gap-2.5">
         <!-- Populated via JS -->
       </div>
     </div>
   </section>
 
-  <!-- MAIN DUAL-PANE COCKPIT -->
-  <main class="max-w-7xl mx-auto px-4 py-5 flex-1 w-full grid grid-cols-1 lg:grid-cols-12 gap-6">
+  <!-- TAB CONTENT CONTAINERS -->
+  <main class="max-w-7xl mx-auto px-4 py-5 flex-1 w-full">
 
-    <!-- LEFT COLUMN: GIS MAP & POLICY TOOLS (7 Cols) -->
-    <div class="lg:col-span-7 flex flex-col gap-6">
-
-      <!-- GIS Map Container -->
-      <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden flex flex-col shadow-2xl">
-        <!-- Map Controls Toolbar -->
-        <div class="p-3 border-b border-slate-800/80 bg-slate-900/80 flex flex-wrap items-center justify-between gap-2">
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-              <span>🗺️</span> Sovereign Geospatial Hotspot Grid (H3 &amp; LGD)
-            </span>
-          </div>
-
-          <!-- Sector Filters -->
-          <div class="flex items-center gap-1 overflow-x-auto text-[11px]">
-            <button class="sector-filter-btn px-2.5 py-1 rounded bg-cyan-600 text-white font-medium transition" data-sector="all">All</button>
-            <button class="sector-filter-btn px-2.5 py-1 rounded hover:bg-slate-800 text-slate-300 font-medium transition" data-sector="water">💧 Water</button>
-            <button class="sector-filter-btn px-2.5 py-1 rounded hover:bg-slate-800 text-slate-300 font-medium transition" data-sector="roads">🛣️ Roads</button>
-            <button class="sector-filter-btn px-2.5 py-1 rounded hover:bg-slate-800 text-slate-300 font-medium transition" data-sector="power">⚡ Power</button>
-            <button class="sector-filter-btn px-2.5 py-1 rounded hover:bg-slate-800 text-slate-300 font-medium transition" data-sector="health">🏥 Health</button>
-            <button class="sector-filter-btn px-2.5 py-1 rounded hover:bg-slate-800 text-slate-300 font-medium transition" data-sector="telecom">📶 Telecom</button>
-            <button class="sector-filter-btn px-2.5 py-1 rounded hover:bg-slate-800 text-slate-300 font-medium transition" data-sector="sanitation">🚽 Sanitation</button>
-          </div>
+    <!-- ========================================== -->
+    <!-- TAB 1: GIS COMMAND COCKPIT                -->
+    <!-- ========================================== -->
+    <div id="tab-map-content" class="space-y-4">
+      
+      <!-- Map Controls & Layer Selector Header -->
+      <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-900/80 p-3 rounded-2xl border border-slate-800">
+        <!-- Sector Filter Pills -->
+        <div class="flex items-center gap-1.5 overflow-x-auto text-xs">
+          <span class="text-slate-400 font-medium mr-1 hidden sm:inline">Sector:</span>
+          <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-cyan-600 text-white font-bold transition" data-sector="all">All Sectors</button>
+          <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition" data-sector="water">💧 Water</button>
+          <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition" data-sector="roads">🛣️ Roads</button>
+          <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition" data-sector="power">⚡ Power</button>
+          <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition" data-sector="health">🏥 Health</button>
+          <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition" data-sector="telecom">📶 Telecom</button>
+          <button class="sector-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition" data-sector="sanitation">🚽 Sanitation</button>
         </div>
 
-        <!-- Leaflet Map Canvas -->
-        <div id="leaflet-map" class="w-full h-[400px] z-10"></div>
-
-        <div class="p-2.5 bg-slate-900/90 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-          <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span> Critical Need (DDDI &gt; 78)</span>
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span> High Need</span>
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400 inline-block"></span> Corroborated H3 Cluster</span>
-          </div>
-          <span class="italic text-[11px]">Survey of India / LGD Authoritative Boundaries</span>
+        <!-- Tile Provider Switcher (Guaranteed zero API key issues) -->
+        <div class="flex items-center gap-1 bg-slate-950 p-1 rounded-lg border border-slate-800 text-xs">
+          <button onclick="switchTileLayer('esriDark')" id="tile-btn-dark" class="px-2.5 py-1 rounded font-bold bg-cyan-600 text-white transition">🌌 Dark</button>
+          <button onclick="switchTileLayer('osmStreet')" id="tile-btn-osm" class="px-2.5 py-1 rounded font-medium text-slate-400 hover:text-white transition">🗺️ Street</button>
+          <button onclick="switchTileLayer('esriSatellite')" id="tile-btn-sat" class="px-2.5 py-1 rounded font-medium text-slate-400 hover:text-white transition">🛰️ Satellite</button>
         </div>
       </div>
 
-      <!-- MILP PORTFOLIO OPTIMIZER & POLICY WHAT-IF SIMULATOR -->
-      <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-4">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-          <div>
-            <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
-              <span>📊</span> MILP Capital Budget Optimizer (Section 7)
-            </h3>
-            <p class="text-xs text-slate-400">Deterministic welfare maximization with Aspirational &amp; SC/ST equity constraints</p>
+      <!-- Map & Hotspot Inspector Dual Container -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+        <!-- Interactive Leaflet Canvas (8 Cols) -->
+        <div class="lg:col-span-8 glass-panel rounded-2xl border border-slate-800 overflow-hidden relative shadow-2xl">
+          <div id="leaflet-map" class="w-full h-[520px]"></div>
+          
+          <div class="absolute bottom-3 left-3 z-[1000] bg-slate-900/90 backdrop-blur-md border border-slate-800 px-3 py-1.5 rounded-xl text-[11px] text-slate-300 flex items-center gap-3 shadow-lg">
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> Critical Need (DDDI &gt; 75)</span>
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> High Disparity</span>
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span> Corroborated Cluster</span>
           </div>
-          <button onclick="runMILPOptimizer()" class="px-3.5 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg text-xs font-bold transition shadow-lg shadow-cyan-600/30">
-            Solve MILP Portfolio
+        </div>
+
+        <!-- Hotspot Inspector Sidebar (4 Cols) -->
+        <div class="lg:col-span-4 glass-panel p-5 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+              <span class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">Hotspot Inspector</span>
+              <span id="inspect-urgency-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/20 text-red-300 border border-red-500/40">SELECT A PIN</span>
+            </div>
+
+            <div id="inspector-placeholder" class="text-center py-12 text-slate-500 text-xs">
+              <div class="text-3xl mb-2">📍</div>
+              <p>Click any circular marker on the map to inspect verified demand signals, demographic vulnerability, and formulate capital project DPRs.</p>
+            </div>
+
+            <div id="inspector-content" class="space-y-3 text-xs hidden">
+              <div>
+                <h3 id="inspect-title" class="font-bold text-slate-100 text-base">Kasansur Water Crisis</h3>
+                <p id="inspect-location" class="text-slate-400 text-xs">Gadchiroli (LGD: 990001) • Etapalli Block</p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+                <div>
+                  <span class="text-slate-500 block text-[10px]">Demand Score:</span>
+                  <span id="inspect-score" class="text-lg font-bold text-cyan-400 font-mono">82.4 / 100</span>
+                </div>
+                <div>
+                  <span class="text-slate-500 block text-[10px]">Citizens Impacted:</span>
+                  <span id="inspect-beneficiaries" class="text-lg font-bold text-emerald-400 font-mono">14,200</span>
+                </div>
+                <div>
+                  <span class="text-slate-500 block text-[10px]">Sector Deficit:</span>
+                  <span id="inspect-deficit" class="text-sm font-bold text-amber-400 font-mono">78% Gap</span>
+                </div>
+                <div>
+                  <span class="text-slate-500 block text-[10px]">H3 Hex Index:</span>
+                  <span id="inspect-h3" class="text-xs font-mono text-purple-300">8860a2a1...</span>
+                </div>
+              </div>
+
+              <div class="space-y-1">
+                <span class="text-slate-400 font-semibold block text-[11px]">Ground Citizen Testimony:</span>
+                <p id="inspect-testimony" class="italic text-slate-300 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800 text-[11px] leading-relaxed">
+                  "Tap water off for 4 months. Children fell ill from well water."
+                </p>
+              </div>
+
+              <div id="inspect-blindspot-alert" class="p-2 rounded-lg bg-red-950/40 border border-red-500/40 text-[11px] text-red-300 hidden">
+                ⚠️ <strong>Government Blind Spot:</strong> Severe deficit with stalled government schemes.
+              </div>
+            </div>
+          </div>
+
+          <div id="inspector-action-box" class="pt-2 hidden">
+            <button id="inspect-formulate-btn" class="w-full py-2 px-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-cyan-600/30">
+              Formulate Capital Project Dossier →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- TAB 2: CITIZEN VOICE & WHATSAPP KIOSK      -->
+    <!-- ========================================== -->
+    <div id="tab-kiosk-content" class="space-y-4 hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- Left: WhatsApp Citizen Chat Simulator (5 Cols) -->
+        <div class="lg:col-span-5 glass-panel rounded-2xl border border-slate-800 overflow-hidden flex flex-col shadow-2xl">
+          <!-- WhatsApp Header -->
+          <div class="bg-[#1f2c34] p-3 flex items-center justify-between border-b border-slate-700">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center font-bold text-white text-sm">
+                जी
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-100 text-xs">Jana-GatiShakti WhatsApp Bot</h4>
+                <span class="text-[10px] text-emerald-400 block font-medium">● Verified DPI Official Rail</span>
+              </div>
+            </div>
+            <span class="text-[10px] font-mono bg-slate-800 px-2 py-0.5 rounded text-slate-300">WhatsApp v2.26</span>
+          </div>
+
+          <!-- Chat Messages Body -->
+          <div id="whatsapp-chat-body" class="p-4 flex-1 space-y-3 overflow-y-auto max-h-[420px] bg-[#0b141a]">
+            <!-- Bot Welcome -->
+            <div class="flex items-start">
+              <div class="chat-bubble-in p-3 max-w-[85%] text-xs space-y-1.5 shadow">
+                <p class="font-semibold text-emerald-400">नमस्कार! जन-गतिशक्ती मध्ये आपले स्वागत आहे.</p>
+                <p>आपल्या गावातील पाणी, रस्ते, वीज किंवा आरोग्याच्या समस्या आवाजात सांगा किंवा संदेश पाठवा.</p>
+                <span class="text-[9px] text-slate-400 block text-right">10:00 AM</span>
+              </div>
+            </div>
+
+            <!-- Citizen Voice Simulation Bubble -->
+            <div class="flex items-end justify-end">
+              <div class="chat-bubble-out p-3 max-w-[85%] text-xs space-y-1.5 shadow">
+                <div class="flex items-center gap-2">
+                  <button class="w-7 h-7 rounded-full bg-emerald-700 flex items-center justify-center text-white text-xs">▶</button>
+                  <div class="flex-1 bg-emerald-950/60 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-cyan-300 h-full w-[65%]"></div>
+                  </div>
+                  <span class="text-[10px] text-emerald-200">0:38</span>
+                </div>
+                <p class="text-[11px] text-emerald-100 italic">"कासनसूर गावात नळाचे पाणी ४ महिन्यांपासून बंद आहे. फोन ९८२२१४५६७८..."</p>
+                <span class="text-[9px] text-emerald-300/80 block text-right">10:02 AM ✓✓</span>
+              </div>
+            </div>
+
+            <!-- Bot Confirmation -->
+            <div class="flex items-start">
+              <div class="chat-bubble-in p-3 max-w-[85%] text-xs space-y-1.5 shadow">
+                <p class="text-cyan-300 font-bold">✓ तक्रार नोंदवली (तिकीट: K7Q2MX)</p>
+                <p class="text-[11px] text-slate-300">क्षेत्र: पाणी पुरवठा (Water) • तीव्रता: अतितातडीची (5/5). वैयक्तिक माहिती आपोआप हटवली आहे.</p>
+                <span class="text-[9px] text-slate-400 block text-right">10:02 AM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Input -->
+          <div class="p-3 bg-[#1f2c34] flex items-center gap-2 border-t border-slate-700">
+            <input type="text" id="wa-chat-input" placeholder="Type a message or village name..." class="flex-1 bg-[#2a3942] border-none rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none">
+            <button onclick="simulateWhatsAppSend()" class="p-2 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-white text-xs font-bold">
+              ➤
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Bhasha-Setu Voice Terminal (7 Cols) -->
+        <div class="lg:col-span-7 glass-panel p-6 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+            <div>
+              <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+                <span>🎙️</span> Bhasha-Setu: Multilingual Voice &amp; Chat Terminal
+              </h3>
+              <p class="text-xs text-slate-400">Marathi, Hindi, English • DPDP Act 2023 Verhoeff Sanitization</p>
+            </div>
+            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">
+              Verhoeff Active
+            </span>
+          </div>
+
+          <!-- Scenario Presets -->
+          <div class="space-y-1.5">
+            <span class="text-xs font-semibold text-slate-400 block">1-Click Test Scenarios:</span>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <button onclick="loadPresetScenario('vidarbha')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                🌾 Vidarbha Water &amp; Health (Marathi)
+              </button>
+              <button onclick="loadPresetScenario('nandurbar')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                ⛰️ Nandurbar Satpura Water (Marathi)
+              </button>
+              <button onclick="loadPresetScenario('washim')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                ⚡ Washim Feeder Blackout (Marathi)
+              </button>
+              <button onclick="loadPresetScenario('bastar')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                🌲 Bastar Tribal Road (Hindi)
+              </button>
+            </div>
+          </div>
+
+          <!-- District Selector (Canonical LGD) -->
+          <div class="text-xs space-y-1">
+            <label class="text-slate-300 font-semibold">Reporting Jurisdiction (LGD District Code):</label>
+            <select id="district-select" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-slate-200 focus:outline-none focus:border-cyan-500 font-medium">
+              <!-- Populated via JS -->
+            </select>
+          </div>
+
+          <!-- Voice / Text Input Area -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <label class="text-slate-300 font-semibold">Voice Transcript / Citizen Text:</label>
+              <div id="audio-wave" class="flex items-center h-4">
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+              </div>
+            </div>
+            <textarea id="citizen-voice-input" rows="3" placeholder="Speak in Marathi, Hindi, English, or type feedback (Aadhaar & phone automatically scrubbed)..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500"></textarea>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="text-slate-400">Co-signers:</span>
+              <input type="number" id="corroboration-input" min="1" max="500" value="45" class="w-16 bg-slate-900 border border-slate-700 rounded p-1 text-center font-mono text-cyan-400">
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button id="mic-record-btn" onclick="toggleMicrophone()" class="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-xl font-bold transition flex items-center gap-1.5">
+                🎙️ Speak in Vernacular
+              </button>
+              <button onclick="openConsentModalBeforeSubmit()" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold shadow-lg shadow-cyan-600/30 transition">
+                Ingest &amp; Cluster →
+              </button>
+            </div>
+          </div>
+
+          <!-- Real-Time Processing Status Box -->
+          <div id="ingestion-result-box" class="hidden"></div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- TAB 3: CAPITAL PROJECT PIPELINE            -->
+    <!-- ========================================== -->
+    <div id="tab-projects-content" class="space-y-4 hidden">
+      <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+        <div>
+          <h3 class="font-bold text-slate-100 text-base">Nivesh-Drishti: Prioritized Capital Project Pipeline</h3>
+          <p class="text-xs text-slate-400">Bankable project dossiers synthesized from verified citizen voice demand</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="window.open('/v1/opendata/ocds', '_blank')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg text-xs font-semibold">
+            Export OCDS 1.1 JSON
+          </button>
+        </div>
+      </div>
+
+      <div id="recommendations-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Populated via JS -->
+      </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- TAB 4: MILP POLICY OPTIMIZER               -->
+    <!-- ========================================== -->
+    <div id="tab-simulator-content" class="space-y-4 hidden">
+      <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div>
+            <h3 class="font-bold text-slate-100 text-base flex items-center gap-2">
+              <span>📊</span> Mixed-Integer Linear Programming (MILP) Budget Optimizer
+            </h3>
+            <p class="text-xs text-slate-400">Deterministic public welfare maximization subject to equity constraints</p>
+          </div>
+          <button onclick="runMILPOptimizer()" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-cyan-600/30">
+            Solve Optimal Portfolio
           </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <!-- Budget Controls -->
-          <div class="space-y-3 text-xs bg-slate-900/50 p-3.5 rounded-xl border border-slate-800/80">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Slider Controls -->
+          <div class="space-y-4 bg-slate-900/60 p-4 rounded-xl border border-slate-800 text-xs">
             <div>
-              <div class="flex justify-between text-slate-300 font-semibold mb-1">
-                <span>Total Capital Budget Envelope:</span>
-                <span class="text-amber-400 font-mono font-bold">₹ <span id="budget-disp">120</span> Cr</span>
+              <div class="flex justify-between text-slate-200 font-bold mb-1">
+                <span>Total Capital Budget Envelope (B):</span>
+                <span class="text-amber-400 font-mono text-sm font-bold">₹ <span id="budget-disp">120</span> Cr</span>
               </div>
               <input type="range" id="sim-total-budget" min="30" max="300" step="10" value="120" oninput="document.getElementById('budget-disp').innerText = this.value" class="w-full accent-cyan-500">
             </div>
 
-            <!-- Equity Sliders -->
-            <div class="space-y-2 pt-2">
-              <div class="flex justify-between items-center text-slate-300">
-                <span>🎯 Aspirational District Floor (α):</span>
-                <span id="val-asp-floor" class="font-mono text-cyan-400 font-bold">40%</span>
+            <div class="space-y-3 pt-2">
+              <div>
+                <div class="flex justify-between text-slate-300 font-semibold mb-1">
+                  <span>🎯 Aspirational District Equity Floor (α):</span>
+                  <span id="val-asp-floor" class="font-mono text-cyan-400 font-bold">40%</span>
+                </div>
+                <input type="range" id="slider-asp-floor" min="10" max="80" step="5" value="40" oninput="document.getElementById('val-asp-floor').innerText = this.value + '%'" class="w-full accent-cyan-400">
               </div>
-              <input type="range" id="slider-asp-floor" min="10" max="80" step="5" value="40" oninput="document.getElementById('val-asp-floor').innerText = this.value + '%'" class="w-full accent-cyan-400">
 
-              <div class="flex justify-between items-center text-slate-300">
-                <span>👥 SC/ST Beneficiary Target (β):</span>
-                <span id="val-scst-floor" class="font-mono text-emerald-400 font-bold">30%</span>
+              <div>
+                <div class="flex justify-between text-slate-300 font-semibold mb-1">
+                  <span>👥 SC/ST Beneficiary Target Share (β):</span>
+                  <span id="val-scst-floor" class="font-mono text-emerald-400 font-bold">30%</span>
+                </div>
+                <input type="range" id="slider-scst-floor" min="10" max="70" step="5" value="30" oninput="document.getElementById('val-scst-floor').innerText = this.value + '%'" class="w-full accent-emerald-400">
               </div>
-              <input type="range" id="slider-scst-floor" min="10" max="70" step="5" value="30" oninput="document.getElementById('val-scst-floor').innerText = this.value + '%'" class="w-full accent-emerald-400">
 
-              <div class="flex justify-between items-center text-slate-300">
-                <span>⚖️ Max Sector Diversity Cap (γ):</span>
-                <span id="val-sector-cap" class="font-mono text-purple-400 font-bold">35%</span>
+              <div>
+                <div class="flex justify-between text-slate-300 font-semibold mb-1">
+                  <span>⚖️ Single-Sector Diversity Cap (γ):</span>
+                  <span id="val-sector-cap" class="font-mono text-purple-400 font-bold">35%</span>
+                </div>
+                <input type="range" id="slider-sector-cap" min="20" max="60" step="5" value="35" oninput="document.getElementById('val-sector-cap').innerText = this.value + '%'" class="w-full accent-purple-400">
               </div>
-              <input type="range" id="slider-sector-cap" min="20" max="60" step="5" value="35" oninput="document.getElementById('val-sector-cap').innerText = this.value + '%'" class="w-full accent-purple-400">
             </div>
           </div>
 
-          <!-- MILP Forecast Result Dashboard -->
-          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex flex-col justify-between space-y-3 text-xs">
+          <!-- Optimization Output Stats -->
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 flex flex-col justify-between space-y-4 text-xs">
             <div class="flex items-center justify-between">
-              <span class="text-slate-400 font-bold uppercase tracking-wider text-[11px]">Optimization Output</span>
-              <span id="opt-solver-badge" class="px-2 py-0.5 rounded text-[10px] bg-cyan-950 text-cyan-300 border border-cyan-800 font-mono">PuLP-CBC</span>
+              <span class="text-slate-400 font-bold uppercase tracking-wider text-xs">Mathematical Optimizer Results</span>
+              <span id="opt-solver-badge" class="px-2 py-0.5 rounded text-[11px] bg-cyan-950 text-cyan-300 border border-cyan-800 font-mono">PuLP-CBC</span>
             </div>
 
-            <div class="space-y-2.5">
-              <div class="flex items-center justify-between p-2 rounded bg-slate-800/60">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/60">
                 <span class="text-slate-300">Selected Projects:</span>
-                <span id="sim-res-hotspots" class="font-bold text-cyan-400 text-sm font-mono">11 / 17</span>
+                <span id="sim-res-hotspots" class="font-bold text-cyan-400 text-base font-mono">11 / 17</span>
               </div>
-              <div class="flex items-center justify-between p-2 rounded bg-slate-800/60">
+              <div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/60">
                 <span class="text-slate-300">Allocated Capex:</span>
-                <span id="sim-res-capex" class="font-bold text-amber-400 text-sm font-mono">₹ 96.95 Cr</span>
+                <span id="sim-res-capex" class="font-bold text-amber-400 text-base font-mono">₹ 96.95 Cr</span>
               </div>
-              <div class="flex items-center justify-between p-2 rounded bg-slate-800/60">
+              <div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/60">
                 <span class="text-slate-300">Aspirational Share Achieved:</span>
-                <span id="sim-res-rate" class="font-bold text-emerald-400 text-sm font-mono">100.0%</span>
+                <span id="sim-res-rate" class="font-bold text-emerald-400 text-base font-mono">100.0%</span>
               </div>
-              <div class="flex items-center justify-between p-2 rounded bg-slate-800/60">
-                <span class="text-slate-300">Binding Constraint:</span>
+              <div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/60">
+                <span class="text-slate-300">Active Binding Constraint:</span>
                 <span id="sim-res-binding" class="font-bold text-slate-200 text-xs font-mono">Total Budget Cap</span>
               </div>
             </div>
 
-            <p class="text-[11px] text-slate-400 italic pt-1">
-              Deterministic MILP welfare maximization. Zero LLM hallucinations in allocation.
+            <p class="text-[11px] text-slate-400 italic">
+              Exact mathematical optimization. Numbers reflect objective welfare values, not LLM guesses.
             </p>
           </div>
         </div>
       </div>
-
-      <!-- JAN-PRAMAN: GHOST ASSET SENTINEL -->
-      <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-3">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-          <div>
-            <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
-              <span>🔍</span> Jan-Praman: Citizen Verification &amp; Ghost Asset Sentinel
-            </h3>
-            <p class="text-xs text-slate-400">Automated post-completion voice calls cross-verifying contractor billing vs ground truth</p>
-          </div>
-          <span class="px-2 py-0.5 rounded text-[11px] bg-red-500/20 text-red-300 border border-red-500/40 font-bold animate-pulse">
-            2 Ghost Asset Alerts Flagged
-          </span>
-        </div>
-
-        <div id="audits-list" class="space-y-3">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-
     </div>
 
-    <!-- RIGHT COLUMN: CITIZEN VOICE TERMINAL & AI DOSSIERS (5 Cols) -->
-    <div class="lg:col-span-5 flex flex-col gap-6">
 
-      <!-- CITIZEN VERNACULAR VOICE & WHATSAPP TERMINAL -->
-      <div class="glass-panel-glow p-5 rounded-2xl space-y-4">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-          <div>
-            <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
-              <span>🎙️</span> Bhasha-Setu: Multilingual Voice &amp; Chat Terminal
-            </h3>
-            <p class="text-xs text-slate-400">Submit requests via Marathi, Hindi, or English (DPDP Compliant)</p>
+    <!-- ========================================== -->
+    <!-- TAB 5: JAN-PRAMAN & AUDIT SENTINEL        -->
+    <!-- ========================================== -->
+    <div id="tab-audit-content" class="space-y-6 hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- Jan-Praman Ghost Asset Sentinel -->
+        <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+            <div>
+              <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+                <span>🔍</span> Jan-Praman: Citizen Verification Calls
+              </h3>
+              <p class="text-xs text-slate-400">Post-completion IVR surveys cross-checking contractor claims</p>
+            </div>
+            <span class="px-2 py-0.5 rounded text-[11px] bg-red-500/20 text-red-300 border border-red-500/40 font-bold">
+              2 Discrepancies
+            </span>
           </div>
-          <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">
-            Verhoeff PII Active
-          </span>
-        </div>
 
-        <!-- One-Click Scenario Presets -->
-        <div class="space-y-1.5">
-          <span class="text-[11px] font-semibold text-slate-400 block">Quick Citizen Scenarios (1-Click Test):</span>
-          <div class="flex flex-wrap gap-1.5 text-xs">
-            <button onclick="loadPresetScenario('vidarbha')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
-              🌾 Vidarbha Water &amp; Health (Marathi)
-            </button>
-            <button onclick="loadPresetScenario('bastar')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
-              🌲 Bastar Tribal Road (Hindi)
-            </button>
-            <button onclick="loadPresetScenario('bundelkhand')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
-              ☀️ Bundelkhand Dry Pipeline (Hindi)
-            </button>
-            <button onclick="loadPresetScenario('nandurbar')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
-              ⛰️ Nandurbar Satpura Water (Marathi)
-            </button>
-            <button onclick="loadPresetScenario('washim')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] transition">
-              ⚡ Washim Feeder Outage (Marathi)
-            </button>
+          <div id="audits-list" class="space-y-3">
+            <!-- Populated via JS -->
           </div>
         </div>
 
-        <!-- Target District Selector (Canonical LGD) -->
-        <div class="text-xs space-y-1">
-          <label class="text-slate-300 font-semibold">Reporting Jurisdiction (LGD District):</label>
-          <select id="district-select" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-slate-200 focus:outline-none focus:border-cyan-500 font-medium">
-            <!-- Dynamically populated with LGD codes -->
-          </select>
-        </div>
+        <!-- Cryptographic Hash-Chained Audit Ledger -->
+        <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+            <div>
+              <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+                <span>🛡️</span> Cryptographic Audit Ledger
+              </h3>
+              <p class="text-xs text-slate-400">CERT-In 2022 compliant SHA-256 hash chain with daily Merkle root</p>
+            </div>
+            <button onclick="checkAuditIntegrity()" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-cyan-300 rounded text-xs font-semibold border border-slate-700">
+              Verify Chain
+            </button>
+          </div>
 
-        <!-- Text / Voice Input Area -->
-        <div class="space-y-2">
-          <div class="flex items-center justify-between text-xs">
-            <label class="text-slate-300 font-semibold">Citizen Voice / Text Transcript:</label>
-            <!-- Audio Waveform Visualizer -->
-            <div id="audio-wave" class="flex items-center h-4">
-              <span class="wave-bar"></span>
-              <span class="wave-bar"></span>
-              <span class="wave-bar"></span>
-              <span class="wave-bar"></span>
-              <span class="wave-bar"></span>
+          <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 space-y-2 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-400">Ledger Status:</span>
+              <span id="stat-audit-status" class="text-emerald-400 font-bold font-mono">CHAIN VERIFIED ✓</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-400">Anchor Standard:</span>
+              <span class="text-slate-300 font-mono">Ed25519 WORM MinIO</span>
             </div>
           </div>
-          <textarea id="citizen-voice-input" rows="3" placeholder="Speak in Marathi, Hindi, English, or type feedback (Aadhaar & phone automatically scrubbed via Verhoeff)..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500"></textarea>
-        </div>
 
-        <div class="flex items-center justify-between gap-3 text-xs">
-          <div class="flex items-center gap-2">
-            <span class="text-slate-400">Corroborated Voices:</span>
-            <input type="number" id="corroboration-input" min="1" max="500" value="45" class="w-16 bg-slate-900 border border-slate-700 rounded p-1 text-center font-mono text-cyan-400">
-          </div>
-
-          <div class="flex items-center gap-2">
-            <button id="mic-record-btn" onclick="toggleMicrophone()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg font-bold transition flex items-center gap-1.5">
-              🎙️ Speak in Vernacular
-            </button>
-            <button onclick="openConsentModalBeforeSubmit()" class="px-4 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-bold shadow-lg shadow-cyan-600/30 transition">
-              Ingest &amp; Cluster →
-            </button>
+          <div class="space-y-2">
+            <span class="text-xs font-semibold text-slate-400 block">Recent Immutable Audit Blocks:</span>
+            <div id="audit-logs-display" class="space-y-2 max-h-[300px] overflow-y-auto text-[11px] font-mono">
+              <!-- Populated via JS -->
+            </div>
           </div>
         </div>
 
-        <!-- Real-Time Processing Status Box -->
-        <div id="ingestion-result-box" class="hidden"></div>
       </div>
-
-      <!-- AI-GENERATED CAPITAL PROJECT DOSSIERS ("NIVESH-DRISHTI") -->
-      <div class="glass-panel p-5 rounded-2xl border border-slate-800 flex-1 flex flex-col space-y-4">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-          <div>
-            <h3 class="font-bold text-slate-100 text-sm flex items-center gap-2">
-              <span>🏛️</span> Nivesh-Drishti: Capital Project Pipeline
-            </h3>
-            <p class="text-xs text-slate-400">Algorithmic project dossiers synthesized from verified citizen voice demand</p>
-          </div>
-          <span class="text-xs font-mono text-amber-400 font-bold">MCDA Ranked</span>
-        </div>
-
-        <!-- Project Dossiers Scrollable Container -->
-        <div id="recommendations-list" class="space-y-3 overflow-y-auto max-h-[600px] pr-1">
-          <!-- Dynamically populated project cards -->
-        </div>
-      </div>
-
     </div>
 
   </main>
@@ -447,17 +613,17 @@
     </div>
   </div>
 
-  <!-- DIGITAL PUBLIC GOOD (DPGA) COMPLIANCE FOOTER -->
-  <footer class="border-t border-slate-800 bg-slate-900/90 py-4 text-xs text-slate-400 mt-6">
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-900/90 py-4 text-xs text-slate-400 mt-auto">
     <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center gap-4">
         <span class="font-bold text-slate-300">JANA-GATISHAKTI DPI</span>
         <span>•</span>
         <span>Apache 2.0 Open Source</span>
         <span>•</span>
-        <span>Complies with DPGA 9 Indicators</span>
+        <span>DPGA 9 Indicators Verified</span>
         <span>•</span>
-        <span>DPDP Act 2023 &amp; LGPD Aligned</span>
+        <span>DPDP Act 2023 Aligned</span>
       </div>
       <div class="flex items-center gap-3">
         <a href="/v1/opendata/geojson" target="_blank" class="hover:text-cyan-400 transition font-mono">GeoJSON Endpoint</a>
@@ -469,7 +635,7 @@
     </div>
   </footer>
 
-  <!-- Main JavaScript File -->
+  <!-- Main Controller JS -->
   <script src="/static/app.js"></script>
 </body>
 </html>
